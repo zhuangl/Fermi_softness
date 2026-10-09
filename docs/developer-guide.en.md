@@ -52,6 +52,8 @@ distributed package. Desktop checks require a working display:
 
 ```sh
 python validation/gui_smoke.py
+python validation/gui_animation.py
+python validation/gui_export_pixels.py
 python validation/gui_acceptance_v02.py
 python validation/visual_v02.py
 ```

@@ -1,0 +1,31 @@
+{
+  "release": "0.3.1",
+  "scope": "Native macOS Retina GUI exports compared with independent full-frame reference renders",
+  "checks": {
+    "device_pixel_ratio": 2.0,
+    "interactive_framebuffer_size": [
+      1636,
+      1490
+    ],
+    "complete-640x480.mp4": {
+      "model_overlap": 0.9768412548808402,
+      "mean_rgb_error": 1.4436056857638888
+    },
+    "complete-1920x1080.mp4": {
+      "model_overlap": 0.9891247521182621,
+      "mean_rgb_error": 0.5601757008744856
+    },
+    "complete-640x480.gif": {
+      "model_overlap": 0.978079238163687,
+      "mean_rgb_error": 1.7321050347222222
+    },
+    "transparent_png": {
+      "model_overlap": 1.0,
+      "mean_rgb_error": 0.0
+    },
+    "old_gui_export_detected_as_broken": {
+      "model_overlap": 0.006501049997765962,
+      "mean_rgb_error": 22.716669921875
+    }
+  }
+}

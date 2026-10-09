@@ -1,4 +1,4 @@
-# Fermi Softness 0.3.0 — 命令行完整参考
+# Fermi Softness 0.3.1 — 命令行完整参考
 
 [English](cli-reference.en.md) · [使用手册](user-guide.zh-CN.md)
 

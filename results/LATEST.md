@@ -1,4 +1,13 @@
-# Fermi Softness 0.3.0 — rotation and animation 2026-10-09
+# Fermi Softness 0.3.1 — Retina export correction 2026-10-09
+
+GUI movies and still figures now use an independent offscreen renderer, avoiding
+partial Retina framebuffer captures. Native GUI regression checks decoded MP4/GIF
+pixels against full-frame references at 640x480 and 1920x1080, and checks transparent
+PNG export. The previous cropped GUI output is explicitly rejected by the same
+pixel comparison. See results/retina-export-validation.json and docs/release-0.3.1.md.
+
+The core suite remains at 60 passing tests. The real Qt rotation/export/cancel
+workflow also passes after the renderer change.
 
 Implemented automatic camera rotation and MP4/GIF export with axis/speed controls,
 complete-turn framing, fixed color limits, cancellation and camera restoration.

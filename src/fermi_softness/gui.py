@@ -1,5 +1,6 @@
 """Local desktop application: calculation, interactive viewing and export."""
 
+import copy
 import json
 import sys
 from importlib.resources import as_file, files
@@ -13,13 +14,13 @@ from pyvistaqt import QtInteractor
 from . import __version__
 from .animation import (
     ExportCancelled,
-    export_animation,
     fit_rotation_camera,
     orbit_camera,
+    render_animation,
     rotation_axis,
 )
 from .io import read_field, write_field_cube
-from .render import Scene, capture_camera, draw_scene, export_image, restore_camera
+from .render import Scene, capture_camera, draw_scene, render_file, restore_camera
 
 
 class CalculationWorker(QtCore.QThread):
@@ -931,16 +932,18 @@ class MainWindow(W.QMainWindow):
         )
         if path:
             try:
-                export_image(
-                    self.plotter,
+                scene = self.export_scene_snapshot()
+                render_file(
+                    self.field,
                     path,
+                    scene,
+                    self.charge,
                     self.width.value(),
                     self.height.value(),
                     self.dpi.value(),
-                    self.transparent.isChecked(),
+                    transparent=self.transparent.isChecked(),
                 )
-                self.scene.camera = capture_camera(self.plotter)
-                self.scene.save(path + ".scene.json")
+                scene.save(path + ".scene.json")
                 self.statusBar().showMessage(
                     f"Exported {self.width.value()} × {self.height.value()} pixels: {path}"
                 )
@@ -965,9 +968,20 @@ class MainWindow(W.QMainWindow):
             path += ".gif" if selected_filter.startswith("GIF") else ".mp4"
         self.export_movie_to(path, resume_rotation=was_rotating)
 
+    def export_scene_snapshot(self):
+        """Copy the displayed camera/colors without resizing the interactive view."""
+        self.require_field()
+        scene = copy.deepcopy(self.scene)
+        scene.camera = capture_camera(self.plotter)
+        scene.orthographic = bool(self.plotter.camera.parallel_projection)
+        # Match the currently displayed colors; the new renderer must not rescale them.
+        scene.auto_color = False
+        return scene
+
     def export_movie_to(self, path, *, resume_rotation=False):
-        """Keep VTK rendering on the GUI thread while allowing modal cancellation."""
+        """Render independently of the Retina-backed interactive framebuffer."""
         self.stop_rotation()
+        scene = self.export_scene_snapshot()
         self._exporting_animation = True
         self._animation_cancel_requested = False
         dialog = W.QProgressDialog("Preparing animation…", "Cancel", 0, 1000, self)
@@ -983,8 +997,8 @@ class MainWindow(W.QMainWindow):
             dialog.setValue(round(950 * done / total))
 
         try:
-            metadata = export_animation(
-                self.plotter, path, self.scene, self.field.cell,
+            metadata = render_animation(
+                self.field, path, scene, self.charge,
                 width=self.animation_width.value(), height=self.animation_height.value(),
                 fps=self.animation_fps.value(), seconds=self.animation_seconds.value(),
                 turns=self.animation_turns.value(), axis=self.rotation_axis_choice.currentData(),

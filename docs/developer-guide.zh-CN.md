@@ -49,6 +49,8 @@ python validation/compare_pymatgen.py
 
 ```sh
 python validation/gui_smoke.py
+python validation/gui_animation.py
+python validation/gui_export_pixels.py
 python validation/gui_acceptance_v02.py
 python validation/visual_v02.py
 ```

@@ -19,6 +19,16 @@ The matrix configuration alone is not evidence of a passing run.
 | Desktop rendering | Actual Qt/VTK execution | Rotation, three display modes, saved camera, PNG/TIFF, transparency, pixel sizes and DPI |
 | Fortran kernel | gfortran 12.3, runtime checks | Compiled standalone accumulation kernel and numeric driver pass |
 
+## Retina export correction in 0.3.1
+
+The original GUI export checks covered file dimensions, frame counts and camera
+restoration, but missed partial framebuffer capture on Retina displays. Version
+0.3.1 adds `validation/gui_export_pixels.py`, which decodes actual GUI-exported
+MP4/GIF frames and compares their content with independent full-frame references.
+The check covers 640×480 and 1920×1080 video plus transparent PNG, and rejects the
+old cropped GUI output. The interactive camera and viewport remain untouched.
+[Pixel comparison results](../results/retina-export-validation.json).
+
 ## Pt₃Y and Bader in 0.2
 
 The four-layer Pt12Y4 reconstruction completed PW91 relaxation and a static

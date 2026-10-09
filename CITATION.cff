@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Research use of this software or method must cite the original 2016 Fermi softness paper below. A software citation does not replace that paper. 使用本软件或方法开展研究时，应引用下列2016年原始论文。"
 title: "Fermi Softness"
 type: software
-version: 0.3.0
+version: 0.3.1
 date-released: 2026-10-09
 repository-code: "https://github.com/zhuangl/Fermi_softness"
 url: "https://github.com/zhuangl/Fermi_softness"

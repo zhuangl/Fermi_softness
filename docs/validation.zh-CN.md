@@ -21,6 +21,14 @@
 macOS arm64 / Python 3.11 为本地验证环境；Linux VASP 6.4.2 产生原生数据。
 GitHub CI 配置覆盖多系统/Python 版本，实际状态以仓库的运行记录为准。
 
+## 0.3.1 的 Retina 导出修复
+
+此前 GUI 导出检查覆盖文件尺寸、帧数和相机恢复，但漏检了 Retina 帧缓冲只被局部
+截取的问题。0.3.1 增加 `validation/gui_export_pixels.py`，将实际 GUI 导出的
+MP4/GIF 解码后与完整参考图逐像素比较，覆盖 640×480、1920×1080 和透明 PNG。
+同一检查能够识别旧版裁切输出，并确认交互窗口及相机未改变。
+详见[像素检查结果](../results/retina-export-validation.json)。
+
 ## Pt₃Y 和 Bader
 
 四层 Pt12Y4 使用 PW91、408 eV、6×6×1 网格和 144 带。自由原子最大受力为

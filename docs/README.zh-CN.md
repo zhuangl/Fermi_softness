@@ -35,9 +35,9 @@ Huang、Xiao、Lu 和 Zhuang 于 [2016 年](https://doi.org/10.1002/anie.2016018
 
 ## 软件功能
 
-**v0.3.0 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
+**v0.3.1 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
 Fortran 部分提供独立验证的累加核心，特定 VASP 版本的源码接入见开发文档。
-完整范围见[版本说明](release-0.3.0.md)。
+完整范围见[版本说明](release-0.3.1.md)。
 
 ## 安装与启动
 

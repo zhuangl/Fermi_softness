@@ -349,7 +349,8 @@ def export_image(plotter, path, width=3600, height=2600, dpi=300, transparent=Fa
     return path
 
 
-def render_file(field, output, scene=None, charge=None, width=3600, height=2600, dpi=300):
+def render_file(field, output, scene=None, charge=None, width=3600, height=2600, dpi=300,
+                *, transparent=False):
     import pyvista as pv
 
     scene = scene or Scene(
@@ -358,7 +359,7 @@ def render_file(field, output, scene=None, charge=None, width=3600, height=2600,
     plotter = pv.Plotter(off_screen=True, window_size=(1200, 900))
     try:
         draw_scene(plotter, field, scene, charge)
-        export_image(plotter, output, width, height, dpi)
+        export_image(plotter, output, width, height, dpi, transparent)
         scene.camera = capture_camera(plotter)
         return scene
     finally:

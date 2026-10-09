@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.1 — 2026-10-09
+
+- Fix cropped GUI MP4/GIF exports on macOS Retina displays by rendering full
+  frames in a separate offscreen renderer at the requested output dimensions.
+- Route GUI PNG/TIFF export through an independent renderer as well, preserving
+  the current camera, color range and transparency without resizing the live view.
+- Add pixel-level GUI regression checks against independent reference images,
+  covering 640×480, full-HD video, GIF and transparent PNG.
+
 ## 0.3.0 — 2026-10-09
 
 - Add start/pause auto-rotation beside Top / Side / Oblique, with selectable

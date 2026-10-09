@@ -38,6 +38,9 @@ speed is determined by duration and full rotations; the toolbar speed controls
 the interactive preview. A progress dialog allows cancellation. After export or
 cancellation, the original camera and viewport size are restored.
 
+Frames are generated in a separate renderer at the output resolution. Export
+does not resize or capture a subsection of the interactive Retina window.
+
 **MP4** uses H.264 and is suitable for high-resolution presentations. **GIF**
 loops continuously and uses a 256-color palette. Both keep the scene background,
 legend and color limits throughout the turn; changing viewing angle does not
@@ -93,6 +96,8 @@ installation. As with still rendering, a working VTK graphics context is require
 点击 **Export animation (MP4 / GIF)…**，选择新的文件名保存。动画从当前视角开始，
 采用上方工具栏选定的旋转轴。导出速度由“总时长”和“圈数”决定，工具栏的 °/s 用于
 交互预览。导出过程显示进度，并可取消；结束或取消后会恢复原视角和窗口尺寸。
+
+画面由独立渲染器按输出分辨率生成，不缩放或局部截取交互窗口的 Retina 帧缓冲。
 
 **MP4** 使用 H.264，适合高清演示；**GIF** 自动循环播放，采用 256 色调色板。
 两种格式都保持当前背景、图例和色标范围，旋转时不会随角度重新缩放颜色数值。

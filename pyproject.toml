@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fermi-softness"
-version = "0.3.0"
+version = "0.3.1"
 description = "Spatially resolved Fermi softness from VASP wavefunctions, with an interactive scientific viewer"
 readme = "README.md"
 requires-python = ">=3.10"

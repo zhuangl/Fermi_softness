@@ -43,7 +43,7 @@ KGaA, Weinheim. Click the image for the full-resolution screenshot.
 
 ## Software overview
 
-This is version **0.3.0**, a research release with colorbar styles, offline
+This is version **0.3.1**, a research release with colorbar styles, offline
 surface demos, and integrated Bader analysis. The independent VASP
 postprocessor is implemented; the optional Fortran component is an integration
 kernel, not a certified patch to a specific VASP version.
@@ -54,7 +54,7 @@ author's saved view and automatic color limits, showing the Pt-high/Y-low spatia
 
 This release includes the standalone engine, GUI, CLI/Python interfaces, offline
 demos, bilingual manuals and an independent Fortran kernel. Read the
-[release notes](docs/release-0.3.0.md), [scientific conventions](docs/science.md)
+[release notes](docs/release-0.3.1.md), [scientific conventions](docs/science.md)
 and [validation record](docs/validation.md) for its exact scope.
 
 ## Install

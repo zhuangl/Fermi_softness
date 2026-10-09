@@ -11,7 +11,7 @@ from PySide6.QtTest import QTest
 
 from fermi_softness.gui import CalculationWorker, MainWindow
 from fermi_softness.io import read_field
-from fermi_softness.render import Scene, capture_camera, export_image
+from fermi_softness.render import Scene, capture_camera, render_file
 
 output = Path("results/local/gui")
 output.mkdir(parents=True, exist_ok=True)
@@ -37,12 +37,14 @@ def validate():
             window.apply_view()
             after = capture_camera(window.plotter)
             np.testing.assert_allclose(before["position"], after["position"])
-            export_image(window.plotter, output / f"{name}.png", 1800, 1400, 300)
+            render_file(window.field, output / f"{name}.png", window.export_scene_snapshot(),
+                        window.charge, 1800, 1400, 300)
             with Image.open(output / f"{name}.png") as image:
                 assert image.size == (1800, 1400)
                 assert abs(image.info["dpi"][0] - 300) < 1
                 assert np.asarray(image).std() > 10
-        export_image(window.plotter, output / "transparent.tiff", 1000, 800, 600, True)
+        render_file(window.field, output / "transparent.tiff", window.export_scene_snapshot(),
+                    window.charge, 1000, 800, 600, transparent=True)
         with Image.open(output / "transparent.tiff") as image:
             assert image.mode == "RGBA"
             assert image.size == (1000, 800)

@@ -1,4 +1,4 @@
-# Fermi Softness 0.3.0 — complete user guide
+# Fermi Softness 0.3.1 — complete user guide
 
 [中文](user-guide.zh-CN.md) · [Documentation index](index.md) · [CLI reference](cli-reference.en.md)
 
@@ -52,7 +52,7 @@ fermi-softness gui --example pt3y111
 ```
 
 For a server without graphics, install with `python -m pip install .`. To install
-a downloaded wheel, use `python -m pip install "./fermi_softness-0.3.0-py3-none-any.whl[gui]"`.
+a downloaded wheel, use `python -m pip install "./fermi_softness-0.3.1-py3-none-any.whl[gui]"`.
 Dependencies may be downloaded during installation. No PyPI publication is
 assumed. After installation, the bundled demos need no network or VASP.
 

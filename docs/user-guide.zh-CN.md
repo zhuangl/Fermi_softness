@@ -1,4 +1,4 @@
-# Fermi Softness 0.3.0 — 完整使用手册
+# Fermi Softness 0.3.1 — 完整使用手册
 
 [English](user-guide.en.md) · [文档目录](index.md) · [命令行参考](cli-reference.zh-CN.md)
 
@@ -51,7 +51,7 @@ fermi-softness gui --example pt3y111
 ```
 
 服务器只计算、不绘图时，使用 `python -m pip install .`。下载 wheel 后可使用
-`python -m pip install "./fermi_softness-0.3.0-py3-none-any.whl[gui]"` 安装。
+`python -m pip install "./fermi_softness-0.3.1-py3-none-any.whl[gui]"` 安装。
 安装依赖可能需要联网；本项目没有假定软件已发布到 PyPI。安装完成后，内置示例
 可以离线观看，也不需要安装 VASP。
 

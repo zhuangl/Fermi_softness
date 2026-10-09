@@ -291,12 +291,15 @@ def export_animation(
 
 
 def render_animation(field, path, scene, charge=None, **options):
-    """CLI/Python entry point using a separate offscreen renderer."""
+    """Render full frames at the output resolution, separate from any Qt widget."""
     import pyvista as pv
 
     from .render import draw_scene
 
-    plotter = pv.Plotter(off_screen=True, window_size=(1200, 900))
+    width, height = options.get("width", 1920), options.get("height", 1080)
+    validate_animation(path, width, height, options.get("fps", 30),
+                       options.get("seconds", 12), options.get("turns", 1))
+    plotter = pv.Plotter(off_screen=True, window_size=(width, height))
     try:
         draw_scene(plotter, field, scene, charge)
         return export_animation(plotter, path, scene, field.cell, **options)
