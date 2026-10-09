@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+- Display figure units with superscripts and the Angstrom symbol (eV⁻¹ Å⁻³ or
+  keV⁻¹ Å⁻³) in every colorbar layout and exported image.
 - Use the author's saved Pt₃Y view at startup, including its camera, perspective
   projection and automatic color limits, matching the selected screenshot and icon.
 

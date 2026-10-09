@@ -130,8 +130,14 @@ def capture_camera(plotter):
     }
 
 
+def softness_unit_label(display_units):
+    """Display typography, independent of the numerical field's stored units."""
+    # VTK's bundled fonts omit the Unicode superscript minus; mathtext retains it.
+    return rf"$\mathrm{{{display_units}}}^{{-1}}\,\mathrm{{\AA}}^{{-3}}$"
+
+
 def scalar_bar_options(scene, color):
-    title = f"Fermi softness / ({scene.display_units}^-1 A^-3)"
+    title = f"Fermi softness / ({softness_unit_label(scene.display_units)})"
     options = dict(
         title=title,
         color=color,
@@ -163,7 +169,7 @@ def scalar_bar_options(scene, color):
             width=0.44,
             height=0.065,
             n_labels=3,
-            title=f"sF / ({scene.display_units}^-1 A^-3)",
+            title=f"sF / ({softness_unit_label(scene.display_units)})",
         )
     return options
 
@@ -243,7 +249,7 @@ def draw_scene(plotter, field, scene, charge=None, *, preserve_camera=False):
         )
         if scene.colorbar_style in ("vertical", "paper"):
             plotter.add_text(
-                f"{scene.display_units}^-1 A^-3",
+                softness_unit_label(scene.display_units),
                 position=(0.83, 0.12),
                 viewport=True,
                 font_size=9,
