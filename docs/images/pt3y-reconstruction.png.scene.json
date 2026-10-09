@@ -1,0 +1,56 @@
+{
+  "mode": "charge",
+  "isovalue": 0.025,
+  "charge_fraction": 0.95,
+  "charge_isovalue": null,
+  "cmap": "jet",
+  "color_min": 0.001,
+  "color_max": 0.028,
+  "auto_color": false,
+  "opacity": 1.0,
+  "repeats": [
+    2,
+    2,
+    1
+  ],
+  "atoms": true,
+  "cell_edges": false,
+  "orthographic": true,
+  "plane_axis": 2,
+  "plane_fraction": 0.55,
+  "display_stride": 1,
+  "background": "black",
+  "camera": {
+    "position": [
+      [
+        19.98325388363593,
+        21.062330383635928,
+        44.62944663965572
+      ],
+      [
+        1.4740339999999996,
+        2.5531105,
+        9.5571753452674
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "parallel_scale": 12.179392830113935
+  },
+  "colorbar_style": "paper",
+  "colorbar_labels": 2,
+  "colorbar_format": "%.3g",
+  "colorbar_font": "arial",
+  "colorbar_font_size": 14,
+  "display_units": "keV",
+  "reverse_cmap": false,
+  "display_offset": [
+    -0.5,
+    -0.5,
+    0
+  ],
+  "atom_scale": 0.22
+}

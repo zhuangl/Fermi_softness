@@ -1,0 +1,39 @@
+{
+  "system": "Pt(111), 3 layers, 1x1 primitive surface cell",
+  "vasp_version": "6.4.2 gompi",
+  "ENCUT_eV": 400,
+  "kmesh": [
+    4,
+    4,
+    1
+  ],
+  "ISYM": -1,
+  "NBANDS": 48,
+  "SCF_SIGMA_eV": 0.1,
+  "SCF_EDIFF_eV": 1e-08,
+  "electronic_steps": 27,
+  "kt_eV": 0.4,
+  "selected_states": 161,
+  "smooth_grid": [
+    20,
+    20,
+    160
+  ],
+  "native_grid": [
+    36,
+    36,
+    320
+  ],
+  "spectral_softness_eV_inverse": 3.495596548626371,
+  "smooth_integral_eV_inverse": 1.981707525481817,
+  "native_integral_eV_inverse": 3.4955963530178686,
+  "native_relative_integral_error": 5.595854657814955e-08,
+  "native_max_state_norm_error": 1.2753149469801883e-06,
+  "independent_pymatgen_point_max_abs_error_eV_inverse_A_inverse3": 1.8697191850325368e-09,
+  "validation_scope": "software integration benchmark, not a convergence study or paper reproduction",
+  "archive_jobs": {
+    "static": 342335,
+    "single_state_partial": 342336,
+    "native_selected_states": 342341
+  }
+}

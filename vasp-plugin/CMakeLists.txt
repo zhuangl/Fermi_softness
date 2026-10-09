@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.18)
+project(fermi_softness_core LANGUAGES Fortran)
+add_library(fermi_softness_core SHARED fermi_softness_core.f90)
+add_executable(test_kernel test_kernel.f90)
+target_link_libraries(test_kernel PRIVATE fermi_softness_core)
+enable_testing()
+add_test(NAME kernel COMMAND test_kernel)

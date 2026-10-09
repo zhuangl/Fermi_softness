@@ -1,0 +1,30 @@
+name: Bug report / 问题反馈
+description: Report a reproducible calculation, installation or GUI problem.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please omit POTCAR, VASP source, credentials and private research files.
+        请勿上传 POTCAR、VASP 源码、凭据或私人研究文件。
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment / 环境
+      description: Software version, OS, Python, and VASP version if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / 复现步骤
+      description: Exact command or GUI steps; include a small shareable example if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected and actual result / 预期与实际结果
+      description: Include the error, relevant metadata or a screenshot.
+    validations:
+      required: true

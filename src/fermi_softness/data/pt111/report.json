@@ -1,0 +1,83 @@
+{
+  "software_version": "0.2.0",
+  "bader_version": "1.05 08/19/23",
+  "method": "Henkelman Bader neargrid (Tang et al., 2009)",
+  "reference_sources": [
+    {
+      "file": "AECCAR0",
+      "sha256": "59d211150b7e7fbdf9214d036960f5ba67e41d6076bea41c98fcdf14257272a4"
+    },
+    {
+      "file": "AECCAR2",
+      "sha256": "53c4b2f2ce4b51a45104569a40665582923026caa32115f97df4a281a63bc88f"
+    }
+  ],
+  "vacuum_policy": "off",
+  "field_representation": "VASP native LPARD charge density",
+  "grid": [
+    72,
+    72,
+    640
+  ],
+  "interpolation": {
+    "method": "periodic Fourier",
+    "source_shape": [
+      36,
+      36,
+      320
+    ],
+    "target_shape": [
+      72,
+      72,
+      640
+    ]
+  },
+  "atoms": [
+    {
+      "atom": 1,
+      "element": "Pt",
+      "x_A": 1.385929276140707,
+      "y_A": 0.8001666419983334,
+      "z_A": 10.000000050796324,
+      "volume_A3": 74.13248146371959,
+      "softness_eV_inverse": 1.166171160675413,
+      "reference_grid_integral": 169.80155794540914,
+      "valence_electrons": 10.038961021796968
+    },
+    {
+      "atom": 2,
+      "element": "Pt",
+      "x_A": 2.771858593859293,
+      "y_A": 1.6003333080016664,
+      "z_A": 12.263213055,
+      "volume_A3": 14.932300406981026,
+      "softness_eV_inverse": 1.1632540655608667,
+      "reference_grid_integral": 701.813523361871,
+      "valence_electrons": 9.92207803906302
+    },
+    {
+      "atom": 3,
+      "element": "Pt",
+      "x_A": 0.0,
+      "y_A": 0.0,
+      "z_A": 14.526426059203676,
+      "volume_A3": 74.13031717686397,
+      "softness_eV_inverse": 1.1661711267816528,
+      "reference_grid_integral": 169.8015581291116,
+      "valence_electrons": 10.038961010557742
+    }
+  ],
+  "field_integral_eV_inverse": 3.495596353017868,
+  "atomic_sum_eV_inverse": 3.495596353017933,
+  "vacuum_softness_eV_inverse": 0.0,
+  "conservation_error_eV_inverse": 6.483702463810914e-14,
+  "surface_atom_ids": [
+    3
+  ],
+  "surface_softness_eV_inverse": 1.1661711267816528,
+  "reference_density_integral": 1041.4166394363895,
+  "reference_vs_acf_max_abs_error": 3.618710024966276e-07,
+  "reference_usage": "Defines basin boundaries only. Sampled core-density integrals are not atomic charges; use the valence_electrons column for populations.",
+  "elapsed_seconds": 6.634882334154099,
+  "definition": "Integrate the unchanged softness field over charge-density Bader basins."
+}

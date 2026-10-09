@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "date": "2026-10-09",
+  "source_tests": {
+    "passed": 51
+  },
+  "clean_wheel_tests": {
+    "passed": 51
+  },
+  "clean_wheel_environment": {
+    "platform": "macOS arm64",
+    "python": "3.11",
+    "pyvista": "0.49.0",
+    "vtk": "9.7.1",
+    "PySide6": "6.12.0"
+  },
+  "clean_wheel_dependency_check": "PASS",
+  "packaged_demo_and_python_api": "PASS",
+  "desktop_demo_bader_and_native_worker": "PASS",
+  "ruff": "PASS",
+  "generated_cli_reference": "PASS",
+  "public_archive_private_data_audit": "PASS",
+  "original_pt3y_quantitative_reproduction": "NOT PASSED",
+  "fortran": "Previously validated independently with gfortran 12.3; hosted CMake check tracked in GitHub Actions.",
+  "hosted_ci": "https://github.com/zhuangl/Fermi_softness/actions"
+}

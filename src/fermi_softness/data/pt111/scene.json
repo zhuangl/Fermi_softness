@@ -1,0 +1,31 @@
+{
+  "mode": "charge",
+  "isovalue": 0.025,
+  "charge_fraction": 0.95,
+  "charge_isovalue": null,
+  "cmap": "viridis",
+  "color_min": 0.0,
+  "color_max": 0.08,
+  "auto_color": true,
+  "opacity": 1.0,
+  "repeats": [
+    4,
+    4,
+    1
+  ],
+  "atoms": true,
+  "cell_edges": false,
+  "orthographic": true,
+  "plane_axis": 2,
+  "plane_fraction": 0.55,
+  "display_stride": 1,
+  "background": "#f3f6fa",
+  "camera": null,
+  "colorbar_style": "horizontal",
+  "colorbar_labels": 5,
+  "colorbar_format": "%.3f",
+  "colorbar_font": "arial",
+  "colorbar_font_size": 14,
+  "display_units": "eV",
+  "reverse_cmap": false
+}

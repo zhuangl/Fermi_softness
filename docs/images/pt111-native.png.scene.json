@@ -1,0 +1,43 @@
+{
+  "mode": "charge",
+  "isovalue": 0.025,
+  "charge_fraction": 0.95,
+  "charge_isovalue": null,
+  "cmap": "viridis",
+  "color_min": 0.003976473458874047,
+  "color_max": 0.056415420944932106,
+  "auto_color": true,
+  "opacity": 1.0,
+  "repeats": [
+    4,
+    4,
+    1
+  ],
+  "atoms": true,
+  "cell_edges": false,
+  "orthographic": true,
+  "plane_axis": 2,
+  "plane_fraction": 0.55,
+  "display_stride": 1,
+  "background": "#f3f6fa",
+  "camera": {
+    "position": [
+      [
+        31.610710921714052,
+        28.096134921714054,
+        35.802311802352996
+      ],
+      [
+        8.07161211767292,
+        4.55703611767292,
+        12.263212998311866
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "parallel_scale": 10.552289312321818
+  }
+}

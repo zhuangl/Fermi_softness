@@ -1,0 +1,22 @@
+[
+  {
+    "id": "pt111",
+    "title": "Pt(111) · VASP benchmark",
+    "description": "Real VASP 6.4.2 calculation. Native augmented density; kT = 0.4 eV. A software integration fixture, not the 2016 DACAPO result."
+  },
+  {
+    "id": "pt3y111",
+    "title": "Pt3Y(111) · paper reconstruction",
+    "description": "PW91, four layers, 6×6×1 k mesh, kT=0.4 eV. Pt-high/Y-low contrast verified. Original 1–28 keV color scale; absolute values are not yet identical to the paper."
+  },
+  {
+    "id": "pt111-bader",
+    "title": "Pt(111) · one Bader surface atom",
+    "description": "The top atom's softness contribution, selected using AECCAR0+AECCAR2 Bader basins. Restore the full field or select another atom in the Bader tab."
+  },
+  {
+    "id": "analytic",
+    "title": "Pt/Y-like slab · synthetic tutorial",
+    "description": "Analytic illustration for learning the viewer. Not an electronic-structure calculation."
+  }
+]

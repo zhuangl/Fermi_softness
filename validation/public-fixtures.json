@@ -1,0 +1,47 @@
+{
+  "repository": "materialsproject/pymatgen",
+  "revision": "975fed926f3b2606648ddb57679ddceaeac10d8a",
+  "license": "MIT (upstream repository)",
+  "files": [
+    {
+      "name": "WAVECAR.H2.ncl",
+      "sha256": "d5ed8d1673bacf9b64b67c919c63bca2320977135e12ba7dc8dbff6af5f56460",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen/975fed926f3b2606648ddb57679ddceaeac10d8a/test-files/io/vasp/outputs/WAVECAR.H2.ncl"
+    },
+    {
+      "name": "WAVECAR.H2_low_symm",
+      "sha256": "6771f3a8bf6a304ae68dfef0f7d0ec622d075da5b2a92ea13feada2b64e802ab",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen/975fed926f3b2606648ddb57679ddceaeac10d8a/test-files/io/vasp/outputs/WAVECAR.H2_low_symm"
+    },
+    {
+      "name": "WAVECAR.H2_low_symm.gamma",
+      "sha256": "ba6a23c5efd0c470cfed75b56b62bbad1c35dbb3b6eedd305748d61bf2590ae9",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen/975fed926f3b2606648ddb57679ddceaeac10d8a/test-files/io/vasp/outputs/WAVECAR.H2_low_symm.gamma"
+    },
+    {
+      "name": "WAVECAR.N2",
+      "sha256": "18bd2de0b3eb5a3fc57f42c227f9891e00995bdbd3cb4c83173cf1c9c9122e22",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen/975fed926f3b2606648ddb57679ddceaeac10d8a/test-files/io/vasp/outputs/WAVECAR.N2"
+    },
+    {
+      "name": "WAVECAR.N2.45210",
+      "sha256": "9183849ef8764a7f1f00ff11a139a021c81b7a426efcdb36007539a0fa9d1fc1",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen/975fed926f3b2606648ddb57679ddceaeac10d8a/test-files/io/vasp/outputs/WAVECAR.N2.45210"
+    },
+    {
+      "name": "WAVECAR.N2.malformed",
+      "sha256": "142fea2c1ca9e4a135ef41ab48a302f27d6578744c06c9352fbc9edb3a2c9544",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen/975fed926f3b2606648ddb57679ddceaeac10d8a/test-files/io/vasp/outputs/WAVECAR.N2.malformed"
+    },
+    {
+      "name": "WAVECAR.N2.spin",
+      "sha256": "08debf7c5a778369a3760ae4d60fc9683030287bb19820cac8b46609ef2a7579",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen/975fed926f3b2606648ddb57679ddceaeac10d8a/test-files/io/vasp/outputs/WAVECAR.N2.spin"
+    },
+    {
+      "name": "WAVECAR.frac_encut",
+      "sha256": "e5dc7763c5bb037542d9b4fdfbaf48dc8b9d61e8c2ef1a5ccaa823a08fa95547",
+      "url": "https://raw.githubusercontent.com/materialsproject/pymatgen/975fed926f3b2606648ddb57679ddceaeac10d8a/test-files/io/vasp/outputs/WAVECAR.frac_encut"
+    }
+  ]
+}

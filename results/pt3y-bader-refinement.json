@@ -1,0 +1,17 @@
+{
+  "previous_grid": [
+    80,
+    80,
+    320
+  ],
+  "refined_grid": [
+    160,
+    160,
+    640
+  ],
+  "max_abs_atomic_change_eV_inverse": 0.0012161365376517352,
+  "max_relative_atomic_change": 0.0043517872251702975,
+  "surface_layer_previous": 3.537366613751976,
+  "surface_layer_refined": 3.5368470780768773,
+  "conservation_error": 3.552713678800501e-14
+}

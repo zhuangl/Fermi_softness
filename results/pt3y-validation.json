@@ -1,0 +1,100 @@
+{
+  "system": "Pt3Y(111), four-layer Pt12Y4 slab",
+  "functional": "PW91",
+  "ENCUT_eV": 408,
+  "kmesh": [
+    6,
+    6,
+    1
+  ],
+  "SCF_SIGMA_eV": 0.1,
+  "kt_eV": 0.4,
+  "NBANDS": 144,
+  "max_free_atom_force_eV_A": 0.029078615410407696,
+  "top_atoms": [
+    1,
+    7,
+    10,
+    13
+  ],
+  "native_integral_eV_inverse": 12.777250616688464,
+  "spectral_softness_eV_inverse": 12.777250657468972,
+  "native_relative_integral_error": 3.191649671179956e-09,
+  "smooth_integral_eV_inverse": 9.09094581066116,
+  "charge_enclosure_fraction": 0.95,
+  "charge_isovalue_A_inverse3": 0.17213777331645227,
+  "surface_site_samples": [
+    {
+      "atom": 1,
+      "element": "Y",
+      "height_above_atom_A": 1.2062998623096906,
+      "softness_keV_inverse_A_inverse3": 6.1453669170134875
+    },
+    {
+      "atom": 7,
+      "element": "Pt",
+      "height_above_atom_A": 1.347461109903293,
+      "softness_keV_inverse_A_inverse3": 43.19079862666978
+    },
+    {
+      "atom": 10,
+      "element": "Pt",
+      "height_above_atom_A": 1.3474607164368284,
+      "softness_keV_inverse_A_inverse3": 43.19086100933972
+    },
+    {
+      "atom": 13,
+      "element": "Pt",
+      "height_above_atom_A": 1.3476202262593957,
+      "softness_keV_inverse_A_inverse3": 43.07924717179283
+    }
+  ],
+  "Pt_to_Y_site_ratio": 7.022141425458204,
+  "qualitative_Pt_high_Y_low": "PASS",
+  "bader_conservation_error_eV_inverse": 3.552713678800501e-14,
+  "bader_surface_softness_eV_inverse": 3.5368470780768773,
+  "compact_native_vs_parchg_Pt111": {
+    "max_abs_error": 8.330744213136398e-06,
+    "rms_error": 2.0888174186058547e-07,
+    "relative_L2_error": 3.0324828683161625e-06
+  },
+  "paper_color_range_keV_inverse_A_inverse3": [
+    1,
+    28
+  ],
+  "strict_original_reproduction": {
+    "status": "NOT PASSED",
+    "reason": "Original final DACAPO Pt3Y softness grid and generation script are unavailable. Absolute values differ; no empirical rescaling is applied.",
+    "differences": [
+      "VASP PAW versus DACAPO ultrasoft datasets",
+      "Archival initial geometry rather than confirmed final original geometry",
+      "Original per-state/spin normalization and Bader reference file require verification"
+    ]
+  },
+  "slurm_jobs": {
+    "relax_static": 342345,
+    "native_export_validation": 342352
+  },
+  "bader_reference_grid": [
+    160,
+    160,
+    640
+  ],
+  "bader_grid_refinement": {
+    "previous_grid": [
+      80,
+      80,
+      320
+    ],
+    "refined_grid": [
+      160,
+      160,
+      640
+    ],
+    "max_abs_atomic_change_eV_inverse": 0.0012161365376517352,
+    "max_relative_atomic_change": 0.0043517872251702975,
+    "surface_layer_previous": 3.537366613751976,
+    "surface_layer_refined": 3.5368470780768773,
+    "conservation_error": 3.552713678800501e-14
+  }
+}

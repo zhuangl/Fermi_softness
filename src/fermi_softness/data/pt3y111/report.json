@@ -1,0 +1,229 @@
+{
+  "software_version": "0.2.0",
+  "bader_version": "1.05 08/19/23",
+  "method": "Henkelman Bader neargrid (Tang et al., 2009)",
+  "reference_sources": [
+    {
+      "file": "AECCAR0",
+      "sha256": "e49c3c4b7c8cc642bed89ea1538f718b628bfd22a80615b2fdaaafb8dfe28d37"
+    },
+    {
+      "file": "AECCAR2",
+      "sha256": "2ba6ede3436136f7bffffef8891b1e71b610583f2e7247525cbe5d9e7e793376"
+    }
+  ],
+  "vacuum_policy": "off",
+  "field_representation": "VASP native weighted density (fixed orbitals)",
+  "grid": [
+    160,
+    160,
+    640
+  ],
+  "interpolation": {
+    "method": "periodic Fourier",
+    "source_shape": [
+      80,
+      80,
+      320
+    ],
+    "target_shape": [
+      160,
+      160,
+      640
+    ]
+  },
+  "atoms": [
+    {
+      "atom": 1,
+      "element": "Y",
+      "x_A": 5.896031817643,
+      "y_A": 5.6168430999999994e-05,
+      "z_A": 13.250237612011999,
+      "volume_A3": 53.0653868454502,
+      "softness_eV_inverse": 0.27945680124656014,
+      "reference_grid_integral": 38.08834384607062,
+      "valence_electrons": 9.26746000751857
+    },
+    {
+      "atom": 2,
+      "element": "Y",
+      "x_A": 0.0,
+      "y_A": 0.0,
+      "z_A": 5.999998597776,
+      "volume_A3": 39.85136684296334,
+      "softness_eV_inverse": 0.2641973182985655,
+      "reference_grid_integral": 36.9619446076633,
+      "valence_electrons": 9.266256073359772
+    },
+    {
+      "atom": 3,
+      "element": "Y",
+      "x_A": 0.001117650852000131,
+      "y_A": 3.4034954391189998,
+      "z_A": 10.782396863896,
+      "volume_A3": 12.60281927277907,
+      "softness_eV_inverse": 0.1284849274313715,
+      "reference_grid_integral": 36.470162542599944,
+      "valence_electrons": 9.28037038240419
+    },
+    {
+      "atom": 4,
+      "element": "Y",
+      "x_A": 2.9480735628010004,
+      "y_A": 1.702066858372,
+      "z_A": 8.407084497776,
+      "volume_A3": 12.863479708454856,
+      "softness_eV_inverse": 0.13598697926377934,
+      "reference_grid_integral": 36.28862867110442,
+      "valence_electrons": 9.260781596984016
+    },
+    {
+      "atom": 5,
+      "element": "Pt",
+      "x_A": 1.454889081787,
+      "y_A": 0.8387682863439999,
+      "z_A": 10.786729618516,
+      "volume_A3": 19.39171213699532,
+      "softness_eV_inverse": 0.892690378167592,
+      "reference_grid_integral": 76.93107143701266,
+      "valence_electrons": 10.524571376665962
+    },
+    {
+      "atom": 6,
+      "element": "Pt",
+      "x_A": 1.6666600007276597e-07,
+      "y_A": 1.702066858372,
+      "z_A": 8.407084497776,
+      "volume_A3": 19.652991823663715,
+      "softness_eV_inverse": 0.8778202819386967,
+      "reference_grid_integral": 76.7165407412513,
+      "valence_electrons": 10.549876635316963
+    },
+    {
+      "atom": 7,
+      "element": "Pt",
+      "x_A": -1.457730685794,
+      "y_A": 2.562618283502,
+      "z_A": 13.085111519272,
+      "volume_A3": 78.88554353674797,
+      "softness_eV_inverse": 1.0880049639228586,
+      "reference_grid_integral": 77.15793031372081,
+      "valence_electrons": 10.624044152178024
+    },
+    {
+      "atom": 8,
+      "element": "Pt",
+      "x_A": -1.474036281402,
+      "y_A": 4.255172252151,
+      "z_A": 8.407084497776,
+      "volume_A3": 19.629062196020648,
+      "softness_eV_inverse": 0.8765680228520905,
+      "reference_grid_integral": 76.71276185882277,
+      "valence_electrons": 10.546086769346708
+    },
+    {
+      "atom": 9,
+      "element": "Pt",
+      "x_A": 4.422101499999,
+      "y_A": 2.553100287558,
+      "z_A": 5.999998597776,
+      "volume_A3": 83.87113327826508,
+      "softness_eV_inverse": 1.1369197206502384,
+      "reference_grid_integral": 77.03772284705373,
+      "valence_electrons": 10.610917100004642
+    },
+    {
+      "atom": 10,
+      "element": "Pt",
+      "x_A": -8.499580699983512e-05,
+      "y_A": 5.0873330885209995,
+      "z_A": 13.085111519272,
+      "volume_A3": 78.93605672485958,
+      "softness_eV_inverse": 1.0883867350994842,
+      "reference_grid_integral": 77.16149425932957,
+      "valence_electrons": 10.627859006288958
+    },
+    {
+      "atom": 11,
+      "element": "Pt",
+      "x_A": 4.442198308344,
+      "y_A": 0.839426988853,
+      "z_A": 10.786031563605,
+      "volume_A3": 19.38003483256321,
+      "softness_eV_inverse": 0.8911086144817004,
+      "reference_grid_integral": 76.90946412078404,
+      "valence_electrons": 10.522974971069582
+    },
+    {
+      "atom": 12,
+      "element": "Pt",
+      "x_A": 2.9480675,
+      "y_A": 0.0,
+      "z_A": 5.999998597776,
+      "volume_A3": 83.89904380514636,
+      "softness_eV_inverse": 1.136604626913575,
+      "reference_grid_integral": 77.03566148966375,
+      "valence_electrons": 10.608856134610885
+    },
+    {
+      "atom": 13,
+      "element": "Pt",
+      "x_A": 1.458376814392,
+      "y_A": 2.562143404949,
+      "z_A": 13.086026211913998,
+      "volume_A3": 79.62130218039823,
+      "softness_eV_inverse": 1.0809985778079743,
+      "reference_grid_integral": 77.1995643632316,
+      "valence_electrons": 10.622356944834973
+    },
+    {
+      "atom": 14,
+      "element": "Pt",
+      "x_A": 2.9491114514520005,
+      "y_A": 3.4268564001939996,
+      "z_A": 10.786729618516,
+      "volume_A3": 19.3838388029464,
+      "softness_eV_inverse": 0.8926554375640734,
+      "reference_grid_integral": 76.92861995122057,
+      "valence_electrons": 10.522187204220439
+    },
+    {
+      "atom": 15,
+      "element": "Pt",
+      "x_A": 1.474037114733,
+      "y_A": 4.255172252151,
+      "z_A": 8.407084497776,
+      "volume_A3": 19.650116729769447,
+      "softness_eV_inverse": 0.8778151293735104,
+      "reference_grid_integral": 76.71599188120287,
+      "valence_electrons": 10.549328876213565
+    },
+    {
+      "atom": 16,
+      "element": "Pt",
+      "x_A": 1.4740339999990002,
+      "y_A": 2.553100287558,
+      "z_A": 5.999998597776,
+      "volume_A3": 84.0167014937426,
+      "softness_eV_inverse": 1.12955210167643,
+      "reference_grid_integral": 77.04296876080842,
+      "valence_electrons": 10.616073026729845
+    }
+  ],
+  "field_integral_eV_inverse": 12.777250616688464,
+  "atomic_sum_eV_inverse": 12.7772506166885,
+  "vacuum_softness_eV_inverse": 0.0,
+  "conservation_error_eV_inverse": 3.552713678800501e-14,
+  "surface_atom_ids": [
+    1,
+    7,
+    10,
+    13
+  ],
+  "surface_softness_eV_inverse": 3.5368470780768773,
+  "reference_density_integral": 1071.3588716915424,
+  "reference_vs_acf_max_abs_error": 4.896637477713739e-07,
+  "reference_usage": "Defines basin boundaries only. Sampled core-density integrals are not atomic charges; use the valence_electrons column for populations.",
+  "elapsed_seconds": 35.530160958878696,
+  "definition": "Integrate the unchanged softness field over charge-density Bader basins."
+}

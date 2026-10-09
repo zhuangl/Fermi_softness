@@ -1,0 +1,7 @@
+{
+  "AE_reference_surface_softness": 3.537366613751976,
+  "valence_reference_surface_softness": 3.5375877635208184,
+  "max_atomic_absolute_difference_eV_inverse": 0.0007304836963034078,
+  "max_atomic_relative_difference": 0.0037565100874668318,
+  "interpretation": "Reference-density choice is a reproducibility parameter; neither result establishes the original paper reference choice."
+}

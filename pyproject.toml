@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fermi-softness"
+version = "0.2.0"
+description = "Spatially resolved Fermi softness from VASP wavefunctions, with an interactive scientific viewer"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "BSD-3-Clause"}
+authors = [{name = "Fermi Softness contributors"}]
+keywords = ["fermi-softness", "vasp", "surface-reactivity", "bader", "visualization"]
+dependencies = ["numpy>=1.24", "scipy>=1.11", "defusedxml>=0.7", "ase>=3.23"]
+
+[project.urls]
+Homepage = "https://github.com/zhuangl/Fermi_softness"
+Documentation = "https://github.com/zhuangl/Fermi_softness/blob/main/docs/index.md"
+Repository = "https://github.com/zhuangl/Fermi_softness"
+Issues = "https://github.com/zhuangl/Fermi_softness/issues"
+
+[project.optional-dependencies]
+gui = ["pyvista>=0.44,<0.50", "pyvistaqt>=0.11,<0.14", "PySide6>=6.7,<7", "pillow>=10"]
+dev = ["pytest>=8", "ruff>=0.9", "build>=1"]
+
+[project.scripts]
+fermi-softness = "fermi_softness.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+fermi_softness = ["data/*.json", "data/*/*.json", "data/*/*.npz"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
