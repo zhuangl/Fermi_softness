@@ -87,9 +87,11 @@ In the GUI, select a dataset in **Data** and click **Open selected demo**.
 | `pt111-bader` | One surface atom selected from the Pt demo | A basin-restricted view of the same Pt dataset |
 | `analytic` | Analytic Pt/Y-like illustration | Synthetic teaching data, not DFT |
 
-The Pt₃Y view uses the original 1–28 keV⁻¹ Å⁻³ color scale. Sampled Pt values
-reach about 43 keV⁻¹ Å⁻³, so that scale saturates. Changing the palette or limits
-does not establish agreement with the original calculation.
+The Pt₃Y demo restores the author's saved camera and perspective view, with
+**Fit color range to visible surface** enabled. Its
+color scale follows the displayed surface, showing the full color gradient used
+in the application icon. For a fixed comparison scale, turn off that checkbox
+and enter the desired limits in Style; the paper's range is 1–28 keV⁻¹ Å⁻³.
 
 ## 4. Choose a calculation route
 

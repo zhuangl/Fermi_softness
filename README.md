@@ -49,8 +49,8 @@ postprocessor is implemented; the optional Fortran component is an integration
 kernel, not a certified patch to a specific VASP version.
 
 Start with **Data → Open selected demo** to inspect Pt(111), Pt₃Y(111), or a
-Bader-selected surface atom. Pt₃Y is a PW91 reconstruction with the paper's
-display settings and shows the Pt-high/Y-low spatial contrast.
+Bader-selected surface atom. Pt₃Y is a PW91 reconstruction displayed with the
+author's saved view and automatic color limits, showing the Pt-high/Y-low spatial contrast.
 
 This release includes the standalone engine, GUI, CLI/Python interfaces, offline
 demos, bilingual manuals and an independent Fortran kernel. Read the

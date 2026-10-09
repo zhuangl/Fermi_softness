@@ -7,7 +7,7 @@
   {
     "id": "pt3y111",
     "title": "Pt3Y(111) · paper reconstruction",
-    "description": "PW91, four layers, 6×6×1 k mesh, kT=0.4 eV. Native VASP density with Pt-high/Y-low spatial contrast and the paper's 1–28 keV color scale."
+    "description": "PW91, four layers, 6×6×1 k mesh, kT=0.4 eV. Native VASP density with Pt-high/Y-low spatial contrast. The color range automatically fits the displayed surface."
   },
   {
     "id": "pt111-bader",

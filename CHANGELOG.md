@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Use the author's saved Pt₃Y view at startup, including its camera, perspective
+  projection and automatic color limits, matching the selected screenshot and icon.
+
 ## 0.2.2 — 2026-10-09
 
 - Add a macOS application installer and one-click setup script. Studio opens
