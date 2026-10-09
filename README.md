@@ -17,6 +17,28 @@ and **Fermi Softness Studio**, a local desktop viewer.
 [中文首页与使用文档](docs/README.zh-CN.md) · [Complete user guide](docs/user-guide.en.md) ·
 [All documentation](docs/index.md) · [CLI reference](docs/cli-reference.en.md)
 
+## Origins of Fermi softness
+
+Huang, Xiao, Lu and Zhuang introduced Fermi softness in
+[2016](https://doi.org/10.1002/anie.201601824), bringing a frontier-orbital
+perspective to solid catalyst surfaces. By weighting electronic states near the
+Fermi level, the method provides both a surface-reactivity descriptor and a
+spatial map of local reactivity.
+
+On **9 June 2016**, ChemistryViews featured the work in *Frontier Orbital Theory
+for Solid Catalysts*, illustrating the Pt₃Y surface and discussing MoS₂ edges.
+The historical screenshot below was supplied by Lin Zhuang. This toolkit brings
+the method to VASP workflows with interactive visualization and atomic analysis.
+
+[![ChemistryViews, 9 June 2016: Frontier Orbital Theory for Solid Catalysts](docs/images/chemistryviews-2016.jpg)](docs/images/chemistryviews-2016.jpg)
+
+*Historical coverage: ChemistryViews / Angewandte Chemie International Edition,
+9 June 2016. Copyright credited in the screenshot: Wiley-VCH Verlag GmbH & Co.
+KGaA, Weinheim. Click the image for the full-resolution screenshot.
+[Image source and credits](THIRD_PARTY.md#historical-chemistryviews-screenshot).*
+
+## Software overview
+
 This is version **0.2.1**, a research release with colorbar styles, offline
 surface demos, and integrated Bader analysis. The independent VASP
 postprocessor is implemented; the optional Fortran component is an integration

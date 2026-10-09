@@ -9,6 +9,9 @@ reactivity descriptor. It provides a command line, a Python API and a desktop GU
 **Fermi Softness Studio**. The method is from Huang, Xiao, Lu and Zhuang,
 [Angew. Chem. Int. Ed. 55, 6239–6243 (2016)](https://doi.org/10.1002/anie.201601824).
 
+The [origins of Fermi softness](../README.md#origins-of-fermi-softness) include
+the author's historical screenshot of the 2016 ChemistryViews feature.
+
 You can calculate three-dimensional fields, inspect periodic surfaces, integrate
 atomic Bader basins, and export numerical volumes and publication figures. This
 release is a standalone VASP postprocessor. The Fortran directory contains an

@@ -12,6 +12,25 @@
 > [DOI: 10.1002/anie.201601824](https://doi.org/10.1002/anie.201601824)。**
 > [完整书目信息和 BibTeX](../CITING.md)。仅引用软件仓库不能代替原始论文。
 
+## 费米软度的来历
+
+Huang、Xiao、Lu 和 Zhuang 于 [2016 年](https://doi.org/10.1002/anie.201601824)
+提出费米软度，将分子前线轨道的反应性分析思路拓展到固体表面。通过对费米能级附近
+的电子态加权，该方法既给出表面反应性描述符，也能显示局域反应性的空间分布。
+
+**2016 年 6 月 9 日**，ChemistryViews 以 *Frontier Orbital Theory for Solid Catalysts*
+（固体催化剂的前线轨道理论）介绍了这项研究，展示 Pt₃Y 表面图像，并介绍了 MoS₂
+边缘的应用。下图是庄林保存并提供的当年报道截图。本工具包将这一方法带入 VASP
+计算流程，提供交互式绘图和逐原子分析。
+
+[![ChemistryViews 于 2016 年 6 月 9 日刊登的费米软度介绍](images/chemistryviews-2016.jpg)](images/chemistryviews-2016.jpg)
+
+*历史报道出处：ChemistryViews / Angewandte Chemie International Edition，
+2016 年 6 月 9 日。截图标注版权：Wiley-VCH Verlag GmbH & Co. KGaA, Weinheim。
+点击图片可查看原始分辨率。[图片来源与署名说明](../THIRD_PARTY.md#历史-chemistryviews-报道截图)。*
+
+## 软件功能
+
 **v0.2.1 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
 Fortran 部分提供独立验证的累加核心，特定 VASP 版本的源码接入见开发文档。
 完整范围见[版本说明](release-0.2.1.md)。

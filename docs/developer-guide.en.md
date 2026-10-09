@@ -166,7 +166,8 @@ Do not include raw private archives, publisher PDFs, credentials, external Bader
 binaries, VASP source or POTCAR. Review embedded NPZ metadata as well as filenames.
 The bundled NPZ examples are derived numerical fields produced for this project;
 their provenance is in `data/*/report.json` and the validation reports. The
-original paper images and unpublished source archives are not bundled.
+unpublished source archives are not bundled. Historical third-party screenshots
+are credited separately in THIRD_PARTY.md and retain their original copyright.
 
 Keep a release's version consistent across `pyproject.toml`, `__init__.py`,
 `CITATION.cff`, changelog, manuals and release notes. Source archives and wheels

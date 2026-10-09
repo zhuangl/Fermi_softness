@@ -4,6 +4,7 @@ Fermi Softness **0.2.1** · [Project home](../README.md) · [中文首页](READM
 
 | Topic / 内容 | English | 中文 |
 |---|---|---|
+| Origins of Fermi softness and 2016 media coverage | [Background](../README.md#origins-of-fermi-softness) | [方法来历与历史报道](README.zh-CN.md#费米软度的来历) |
 | Installation, complete workflows, GUI, export, troubleshooting | [User guide](user-guide.en.md) | [完整使用手册](user-guide.zh-CN.md) |
 | Every command and option | [CLI reference](cli-reference.en.md) | [命令行参考](cli-reference.zh-CN.md) |
 | Equations, units, normalization, symmetry, grids | [Scientific conventions](science.md) | [科学方法与数值约定](science.zh-CN.md) |

@@ -152,7 +152,8 @@ wheel 和源码包，在干净环境安装 wheel，执行文档中的示例与 A
 
 不要包含私人研究档案、出版商 PDF、凭据、外部 Bader 二进制、VASP 源码或 POTCAR。
 除文件名外，还应审查 NPZ 内嵌元数据。内置 NPZ 是本项目计算产生的派生数值场，
-来源见 `data/*/report.json` 和验证记录；不附带原论文图像或未公开原始档案。
+来源见 `data/*/report.json` 和验证记录；不附带未公开原始档案。单独收录的第三方历史
+截图在 THIRD_PARTY.md 中标明来源，并保留原版权。
 
 版本号应在 `pyproject.toml`、`__init__.py`、`CITATION.cff`、更新日志、手册和发布
 说明中保持一致。wheel 用于安装，源码包还包含开发与文档材料。其他要求见

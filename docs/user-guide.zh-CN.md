@@ -8,6 +8,9 @@ Fermi Softness 将 VASP 的电子态转换为描述表面反应性的局域费�
 Python API 和桌面图形界面 **Fermi Softness Studio**。方法来自 Huang、Xiao、Lu、
 Zhuang 的 [2016 年论文](https://doi.org/10.1002/anie.201601824)。
 
+[费米软度的来历](README.zh-CN.md#费米软度的来历)附有作者保存的 2016 年
+ChemistryViews 报道截图。
+
 软件可以计算三维软度场、观察周期性表面、进行 Bader 逐原子积分，并输出数值体数据
 和高分辨率图像。当前版本是独立的 VASP 后处理程序。Fortran 目录提供可编译的累加
 核心，尚不是针对某个 VASP 版本完成验证的源码插件。
