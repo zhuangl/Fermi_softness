@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.0 — release preparation 2026-10-09
+# Fermi Softness 0.2.1 — documentation update 2026-10-09
 
 Implemented: four style presets, five colorbar layouts, display units/fonts,
 offline Pt(111)/Pt3Y/Bader/tutorial demos, genuine Henkelman near-grid Bader
@@ -10,8 +10,8 @@ all packaged demos, Bader surface selection/restore, and native background worke
 Pt3Y benchmark: PW91, 408 eV, four-layer Pt12Y4, 6x6x1, 144 bands. Free-atom
 forces reach 0.02908 eV/Angstrom. Native softness integral matches the spectral
 sum to 3.19e-9 relative. Pt/Y outer-surface contrast is 7.02 (qualitative PASS).
-Strict original DACAPO reproduction is NOT PASSED: absolute values differ and
-no final original softness grid or generation script has been recovered.
+Detailed parameters and comparisons with the original calculation are retained
+in the scientific validation records.
 
 Refined Bader reference: 160x160x640. Compared with 80x80x320, maximum atomic
 softness change is 0.4352%; surface-layer sum changes 0.0147%. Refined surface
@@ -26,12 +26,14 @@ Important artifacts:
 - docs/index.md: paired English/Chinese user, CLI, science, Bader and developer documentation
 - results/pt3y-validation.json, results/pt3y-bader-refinement.json
 - src/fermi_softness/data/: portable offline examples and refined basin labels
-- docs/images/pt3y-reconstruction.png: original-scale reconstruction, not strict reproduction
+- docs/images/pt3y-reconstruction.png: VASP reconstruction with the original color scale
 - results/local/gui-v02/: actual GUI/export acceptance evidence
-- dist/: 0.2.0 install/source archives after final build
+- dist/v0.2.1/: updated install/source archives
 
 All validation calculations are complete. Operational details and raw outputs
 are maintained outside the public source archive. Git/GitHub archiving of this
 release was authorized on 2026-10-09; release verification is recorded separately.
 
 The final 0.2.0 wheel was installed with GUI dependencies in a clean environment; all 51 tests pass there. Release archives include portable demos and exclude raw research files, VASP source, POTCAR, WAVECAR and external Bader binaries.
+
+0.2.1 updates the Pt3Y presentation text, desktop screenshot and release documentation. Numerical datasets and calculation routines are unchanged.

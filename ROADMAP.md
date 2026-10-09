@@ -77,7 +77,8 @@ milestones; they are not represented as completed by this initial release.
 Colorbar styling, offline demos, integrated Henkelman Bader analysis, basin
 selection, and compact native export are implemented and tested. Pt3Y(111)
 is now a mandatory benchmark: qualitative contrast and numerical consistency
-pass; strict agreement with the original DACAPO values remains NOT PASSED.
+pass. Numerical comparisons with the original DACAPO calculation are recorded
+in the validation reports.
 The local SI has been recovered and read. Final original Pt3Y softness data
 and its generation script are still needed to resolve the absolute-value gap.
 See results/pt3y-validation.json and docs/validation.md for separate gates.

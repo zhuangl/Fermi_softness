@@ -3,6 +3,7 @@
 import argparse
 from pathlib import Path
 
+from fermi_softness import __version__
 from fermi_softness.cli import parser
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -61,7 +62,7 @@ def generate(language):
     i = int(zh)
     other = "en" if zh else "zh-CN"
     title = "命令行完整参考" if zh else "Complete CLI reference"
-    lines = [f"# Fermi Softness 0.2.0 — {title}", "",
+    lines = [f"# Fermi Softness {__version__} — {title}", "",
              f"[{'English' if zh else '中文'}](cli-reference.{other}.md) · "
              f"[{'使用手册' if zh else 'User guide'}](user-guide.{language}.md)", ""]
     lines += [

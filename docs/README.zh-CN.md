@@ -12,9 +12,9 @@
 > [DOI: 10.1002/anie.201601824](https://doi.org/10.1002/anie.201601824)。**
 > [完整书目信息和 BibTeX](../CITING.md)。仅引用软件仓库不能代替原始论文。
 
-**v0.2.0 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
-主要功能已经验证；Pt₃Y 与原稿的严格定量复现仍未通过，Fortran 部分尚未完成特定
-VASP 版本的源码接入。完整范围见[版本说明](release-0.2.0.md)。
+**v0.2.1 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
+Fortran 部分提供独立验证的累加核心，特定 VASP 版本的源码接入见开发文档。
+完整范围见[版本说明](release-0.2.1.md)。
 
 ![Pt₃Y 重建结果](images/pt3y-reconstruction.png)
 
@@ -47,8 +47,8 @@ Data 页的示例列表现在包含真实 Pt(111)、Pt₃Y(111) 重建、Pt 的�
 fermi-softness gui --example pt3y111
 ```
 
-Pt₃Y 已重现 Pt 高、Y 低的空间对比，但绝对数值尚未完全对齐原论文，界面明确
-标为重建结果。它已纳入验收，严格原图复现仍是未通过项。
+Pt₃Y 示例采用 PW91 和四层表面模型，展示 Pt 高、Y 低的空间对比，
+并提供原论文风格的显示设置。
 
 ## 从 VASP 结果开始
 

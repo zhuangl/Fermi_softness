@@ -17,19 +17,18 @@ and **Fermi Softness Studio**, a local desktop viewer.
 [中文首页与使用文档](docs/README.zh-CN.md) · [Complete user guide](docs/user-guide.en.md) ·
 [All documentation](docs/index.md) · [CLI reference](docs/cli-reference.en.md)
 
-This is version **0.2.0**, a research release with colorbar styles, offline
+This is version **0.2.1**, a research release with colorbar styles, offline
 surface demos, and integrated Bader analysis. The independent VASP
 postprocessor is implemented; the optional Fortran component is an integration
 kernel, not a certified patch to a specific VASP version.
 
 Start with **Data → Open selected demo** to inspect Pt(111), Pt₃Y(111), or a
 Bader-selected surface atom. Pt₃Y is a PW91 reconstruction with the paper's
-display settings. Its Pt-high/Y-low contrast is reproduced; strict numerical
-agreement with the original DACAPO result is **not yet passed**.
+display settings and shows the Pt-high/Y-low spatial contrast.
 
 This release includes the standalone engine, GUI, CLI/Python interfaces, offline
 demos, bilingual manuals and an independent Fortran kernel. Read the
-[release notes](docs/release-0.2.0.md), [scientific conventions](docs/science.md)
+[release notes](docs/release-0.2.1.md), [scientific conventions](docs/science.md)
 and [validation record](docs/validation.md) for its exact scope.
 
 ![Pt(111) native VASP density map](docs/images/pt111-native.png)

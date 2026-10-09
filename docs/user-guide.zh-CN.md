@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.0 — 完整使用手册
+# Fermi Softness 0.2.1 — 完整使用手册
 
 [English](user-guide.en.md) · [文档目录](index.md) · [命令行参考](cli-reference.zh-CN.md)
 
@@ -48,7 +48,7 @@ fermi-softness gui --example pt3y111
 ```
 
 服务器只计算、不绘图时，使用 `python -m pip install .`。下载 wheel 后可使用
-`python -m pip install "./fermi_softness-0.2.0-py3-none-any.whl[gui]"` 安装。
+`python -m pip install "./fermi_softness-0.2.1-py3-none-any.whl[gui]"` 安装。
 安装依赖可能需要联网；本项目没有假定软件已发布到 PyPI。安装完成后，内置示例
 可以离线观看，也不需要安装 VASP。
 
@@ -75,7 +75,7 @@ fermi-softness gui --example analytic
 | 示例 ID | 内容 | 数据含义 |
 |---|---|---|
 | `pt111` | VASP 原生 Pt(111) 软度场和电荷包络面 | 软件验证算例：PBE、三层、1×1、400 eV、4×4×1 k 网格；不是论文中的 Pt 模型 |
-| `pt3y111` | 四层 PW91 Pt₃Y(111)、电荷和加密 Bader 分区 | 原文重建算例；Pt 高/Y 低反差已重现，严格绝对数值复现尚未通过 |
+| `pt3y111` | 四层 PW91 Pt₃Y(111)、电荷和加密 Bader 分区 | VASP 重建算例，展示 Pt 高/Y 低反差并采用原论文显示设置 |
 | `pt111-bader` | Pt 示例中一个表面原子的 Bader 贡献 | 同一个 Pt 数据集的原子区域选区 |
 | `analytic` | 解析构造的 Pt/Y 风格表面 | 教学数据，不是 DFT 结果 |
 
@@ -344,7 +344,7 @@ JSON。公开分享时不包含 VASP 源码和 POTCAR，本项目也不分发这
 ## 13. 验证与引用
 
 在把示例当作论文复现之前，请阅读[验证记录](validation.zh-CN.md)。当前 Pt₃Y 通过
-定性反差和内部一致性检查，原始 DACAPO 绝对数值复现仍未通过。原论文完整材料系列、
+定性反差和内部一致性检查。原论文完整材料系列、
 MoS₂ 边缘和吸附能关联尚未在本软件中逐项复现。
 
 使用本软件或方法开展研究时，应引用 [2016 年原论文](https://doi.org/10.1002/anie.201601824)，

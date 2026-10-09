@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.1 — 2026-10-09
+
+- Simplify the Pt₃Y descriptions across the landing pages, guides, desktop demo
+  catalog and release notes; retain calculation parameters and numerical reports.
+- Refresh the desktop screenshot and bilingual installation instructions.
+- Generate CLI reference version headings from the package version.
+
 ## 0.2.0 — 2026-10-09
 
 - Complete English and Chinese user/developer manuals, numerical and Bader

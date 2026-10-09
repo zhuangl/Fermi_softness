@@ -1,6 +1,6 @@
 # Documentation · 使用文档
 
-Fermi Softness **0.2.0** · [Project home](../README.md) · [中文首页](README.zh-CN.md)
+Fermi Softness **0.2.1** · [Project home](../README.md) · [中文首页](README.zh-CN.md)
 
 | Topic / 内容 | English | 中文 |
 |---|---|---|
@@ -15,7 +15,7 @@ Fermi Softness **0.2.0** · [Project home](../README.md) · [中文首页](READM
 | Independent Fortran kernel and VASP integration contract | [Fortran component](../vasp-plugin/README.md) | [Fortran 核心](../vasp-plugin/README.zh-CN.md) |
 | Regenerate the Pt(111) benchmark | [Pt input](../validation/pt111/README.md) | [Pt 输入](../validation/pt111/README.zh-CN.md) |
 | Regenerate the Pt₃Y(111) reconstruction | [Pt₃Y input](../validation/pt3y111/README.md) | [Pt₃Y 输入](../validation/pt3y111/README.zh-CN.md) |
-| Release contents and citation | [Release notes / 版本说明](release-0.2.0.md) | [Release notes / 版本说明](release-0.2.0.md) |
+| Release contents and citation | [Release notes / 版本说明](release-0.2.1.md) | [Release notes / 版本说明](release-0.2.1.md) |
 | Required original-method citation and BibTeX | [Citation / 引用要求](../CITING.md) | [Citation / 引用要求](../CITING.md) |
 
 The GUI currently uses English labels. The Chinese guide gives the exact labels

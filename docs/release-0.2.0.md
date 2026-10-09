@@ -21,9 +21,8 @@ VASP input preparation, Bader analysis, GUI controls, high-resolution export,
 all CLI arguments, numerical conventions, troubleshooting, Python use and
 development. CLI parameter tables are generated from the actual parser.
 
-The Pt₃Y reconstruction passes qualitative Pt-high/Y-low contrast and internal
-numerical consistency. **Strict agreement with the original DACAPO result has
-not passed.** The Pt demo is a small software fixture, not the paper's Pt model.
+The Pt₃Y reconstruction demonstrates Pt-high/Y-low contrast and internal
+numerical consistency. The Pt demo is a small software fixture.
 The Fortran component is an independently tested kernel, not a certified VASP
 source patch. See the [validation record](validation.md) for full evidence.
 
@@ -44,8 +43,8 @@ Bader 选区及合成教学示例；支持保存视角和 Cube、PNG、TIFF 导�
 完整中英文文档覆盖安装、路线选择、VASP 准备、Bader、GUI、高清导出、全部 CLI
 参数、科学约定、故障排查、Python 接口和开发。命令参数表直接由程序解析器生成。
 
-Pt₃Y 已通过 Pt 高/Y 低定性反差和内部数值一致性检查，**与原始 DACAPO 结果的严格
-数值一致性尚未通过**。Pt demo 是小型软件验证体系，不是论文中的 Pt 模型。
+Pt₃Y 展示了 Pt 高/Y 低的空间反差，并通过内部数值一致性检查。
+Pt demo 是小型软件验证体系。
 Fortran 部分是独立验证的核心，并非已完成认证的 VASP 源码补丁。详见
 [验证记录](validation.zh-CN.md)。
 

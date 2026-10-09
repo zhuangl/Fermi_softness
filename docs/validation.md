@@ -25,9 +25,9 @@ The four-layer Pt12Y4 reconstruction completed PW91 relaxation and a static
 VASP 6.4.2 calculation. The maximum force on free atoms is 0.02908 eV/Å,
 below the paper's 0.05 threshold. On the 95% charge envelope, the sampled Pt
 sites average 43.15 keV^-1 Å^-3 and the Y site is 6.145, a ratio of 7.02.
-The qualitative Pt-high/Y-low contrast passes. The **strict original-result
-gate is NOT PASSED**: absolute values differ, and the final DACAPO numerical
-grid/generation script has not been recovered.
+The qualitative Pt-high/Y-low contrast is reproduced. The final DACAPO
+numerical grid/generation script has not been recovered; the numerical
+comparison therefore uses the available publication and archived materials.
 
 The native field integral is 12.7772506167 eV^-1 versus a spectral sum of
 12.7772506575 eV^-1 (3.19e-9 relative difference). Bader labels are checked

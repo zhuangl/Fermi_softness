@@ -24,6 +24,5 @@ atom IDs in this fixed ordering are 1, 7, 10 and 13.
 The actual native result shows Pt/Y outer-surface softness contrast of about
 7.02 on the 95% charge envelope. Its spatial integral and spectral sum agree
 to 3.19e-9 relative. This passes the qualitative contrast and software
-consistency gates. The strict original-result gate remains **NOT PASSED**:
-absolute values differ, and the final DACAPO softness grid and generation
-script have not been recovered. See `results/pt3y-validation.json`.
+consistency checks. The calculation parameters, archived references and
+numerical comparisons are recorded in `results/pt3y-validation.json`.

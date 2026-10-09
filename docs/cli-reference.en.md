@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.0 — Complete CLI reference
+# Fermi Softness 0.2.1 — Complete CLI reference
 
 [中文](cli-reference.zh-CN.md) · [User guide](user-guide.en.md)
 

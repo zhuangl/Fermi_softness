@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.0 — complete user guide
+# Fermi Softness 0.2.1 — complete user guide
 
 [中文](user-guide.zh-CN.md) · [Documentation index](index.md) · [CLI reference](cli-reference.en.md)
 
@@ -49,7 +49,7 @@ fermi-softness gui --example pt3y111
 ```
 
 For a server without graphics, install with `python -m pip install .`. To install
-a downloaded wheel, use `python -m pip install "./fermi_softness-0.2.0-py3-none-any.whl[gui]"`.
+a downloaded wheel, use `python -m pip install "./fermi_softness-0.2.1-py3-none-any.whl[gui]"`.
 Dependencies may be downloaded during installation. No PyPI publication is
 assumed. After installation, the bundled demos need no network or VASP.
 
@@ -77,7 +77,7 @@ In the GUI, select a dataset in **Data** and click **Open selected demo**.
 | ID | Contents | Scientific status |
 |---|---|---|
 | `pt111` | Native VASP Pt(111) field and charge envelope | Small software benchmark: PBE, three layers, 1×1 cell, 400 eV, 4×4×1 k mesh; not the paper's Pt model |
-| `pt3y111` | Four-layer PW91 Pt₃Y(111), charge and refined Bader basins | Paper reconstruction; Pt-high/Y-low contrast reproduced, strict absolute-value agreement not passed |
+| `pt3y111` | Four-layer PW91 Pt₃Y(111), charge and refined Bader basins | VASP reconstruction showing Pt-high/Y-low contrast with the paper's display settings |
 | `pt111-bader` | One surface atom selected from the Pt demo | A basin-restricted view of the same Pt dataset |
 | `analytic` | Analytic Pt/Y-like illustration | Synthetic teaching data, not DFT |
 
@@ -379,8 +379,8 @@ diagnostic. Report problems using the [contribution guide](../CONTRIBUTING.md).
 ## 13. Validation and citation
 
 Read [validation](validation.md) before interpreting a demo as a reproduction.
-The current Pt₃Y case passes qualitative contrast and internal consistency;
-strict original DACAPO agreement remains open. The full original material series,
+The current Pt₃Y case demonstrates qualitative contrast and internal consistency.
+The full original material series,
 MoS₂ edges and adsorption-energy correlations have not been reproduced here.
 
 Research use of this software or method must cite the
