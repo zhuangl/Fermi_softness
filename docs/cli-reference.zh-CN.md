@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.1 — 命令行完整参考
+# Fermi Softness 0.2.2 — 命令行完整参考
 
 [English](cli-reference.en.md) · [使用手册](user-guide.zh-CN.md)
 
@@ -109,6 +109,16 @@ fermi-softness compute --help
 | 参数 | 必填 | 默认值 / 可选值 | 含义 |
 |---|---|---|---|
 | `-h`, `--help` | 否 | — | 显示命令帮助并退出。 |
+
+## `install-app`
+
+安装 macOS 应用程序图标和启动入口。
+
+| 参数 | 必填 | 默认值 / 可选值 | 含义 |
+|---|---|---|---|
+| `-h`, `--help` | 否 | — | 显示命令帮助并退出。 |
+| `--directory` | 否 | — | 应用程序目录；默认优先使用可写的 /Applications，否则使用 ~/Applications。 |
+| `--open` | 否 | `False` | 安装 macOS 应用入口后立即打开 Studio。 |
 
 ## `install-bader`
 

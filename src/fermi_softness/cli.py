@@ -85,6 +85,9 @@ def parser():
     gui.add_argument("--scene", help="Restore a saved view on opening")
     gui.add_argument("--example", help="Open a packaged demo (see demos command)")
     sub.add_parser("demos", help="List packaged offline demonstration surfaces")
+    desktop = sub.add_parser("install-app", help="Add Studio to macOS Applications with its icon")
+    desktop.add_argument("--directory", help="Applications directory (defaults to a writable Applications folder)")
+    desktop.add_argument("--open", dest="open_app", action="store_true", help="Open the installed app")
     install = sub.add_parser(
         "install-bader", help="Download and verify the official Bader 1.05 executable"
     )
@@ -131,7 +134,18 @@ def parser():
 def main(argv=None):
     args = parser().parse_args(argv)
     try:
-        if args.command == "prepare-frozen":
+        if args.command == "install-app":
+            import subprocess
+
+            from .desktop import install_app
+
+            installed = install_app(args.directory)
+            print(json.dumps(installed, indent=2))
+            if args.open_app:
+                opened = subprocess.run(["/usr/bin/open", installed["app"]], check=False)
+                if opened.returncode:
+                    raise RuntimeError("macOS could not open the installed application.")
+        elif args.command == "prepare-frozen":
             from .frozen import prepare_frozen
 
             options = vars(args).copy()

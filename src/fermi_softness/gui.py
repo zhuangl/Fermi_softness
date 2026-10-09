@@ -2,6 +2,7 @@
 
 import json
 import sys
+from importlib.resources import as_file, files
 from pathlib import Path
 
 import numpy as np
@@ -9,6 +10,7 @@ from PySide6 import QtCore, QtGui
 from PySide6 import QtWidgets as W
 from pyvistaqt import QtInteractor
 
+from . import __version__
 from .io import read_field, write_field_cube
 from .render import Scene, capture_camera, draw_scene, export_image
 
@@ -80,7 +82,7 @@ def _number(value, low=0, high=1e6, decimals=4, step=0.001):
 class MainWindow(W.QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Fermi Softness Studio 0.2")
+        self.setWindowTitle(f"Fermi Softness Studio {__version__}")
         self.resize(1380, 920)
         self.field = self.charge = self.worker = None
         self.scene = Scene()
@@ -997,6 +999,12 @@ class MainWindow(W.QMainWindow):
 
 def launch(field=None, charge=None, demo=False, scene=None, example=None):
     app = W.QApplication.instance() or W.QApplication(sys.argv[:1])
+    app.setApplicationName("Fermi Softness Studio")
+    app.setApplicationDisplayName("Fermi Softness Studio")
+    app.setApplicationVersion(__version__)
+    app.setOrganizationName("Fermi Softness")
+    with as_file(files("fermi_softness").joinpath("assets/fermi-softness.png")) as icon_path:
+        app.setWindowIcon(QtGui.QIcon(str(icon_path)))
     window = MainWindow()
     window.show()
     if example:

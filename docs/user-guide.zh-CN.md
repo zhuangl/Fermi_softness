@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.1 — 完整使用手册
+# Fermi Softness 0.2.2 — 完整使用手册
 
 [English](user-guide.en.md) · [文档目录](index.md) · [命令行参考](cli-reference.zh-CN.md)
 
@@ -51,12 +51,15 @@ fermi-softness gui --example pt3y111
 ```
 
 服务器只计算、不绘图时，使用 `python -m pip install .`。下载 wheel 后可使用
-`python -m pip install "./fermi_softness-0.2.1-py3-none-any.whl[gui]"` 安装。
+`python -m pip install "./fermi_softness-0.2.2-py3-none-any.whl[gui]"` 安装。
 安装依赖可能需要联网；本项目没有假定软件已发布到 PyPI。安装完成后，内置示例
 可以离线观看，也不需要安装 VASP。
 
-macOS 用户可双击源码目录的 `Fermi Softness Studio.command`，它使用同目录下的
-`.venv`。其他安装方式使用 `fermi-softness gui` 或 `python -m fermi_softness gui`。
+macOS 用户运行一次 `fermi-softness install-app --open`，即可在“应用程序”中创建
+Pt₃Y 图标。以后在该目录打开，或通过 Spotlight 搜索 **Fermi Softness Studio**。
+源码目录另提供 **Install Fermi Softness Studio.command** 一键安装入口，具体见
+[桌面安装说明](desktop-app.md)。其他安装方式使用 `fermi-softness gui`
+或 `python -m fermi_softness gui`。
 Windows 也可直接运行 `.venv\Scripts\python.exe -m fermi_softness gui`，省去环境激活。
 
 GUI 和图片渲染需要图形环境。Linux 可以使用桌面会话或配置好的 X/EGL/OSMesa。

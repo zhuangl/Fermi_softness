@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.1 — complete user guide
+# Fermi Softness 0.2.2 — complete user guide
 
 [中文](user-guide.zh-CN.md) · [Documentation index](index.md) · [CLI reference](cli-reference.en.md)
 
@@ -52,13 +52,16 @@ fermi-softness gui --example pt3y111
 ```
 
 For a server without graphics, install with `python -m pip install .`. To install
-a downloaded wheel, use `python -m pip install "./fermi_softness-0.2.1-py3-none-any.whl[gui]"`.
+a downloaded wheel, use `python -m pip install "./fermi_softness-0.2.2-py3-none-any.whl[gui]"`.
 Dependencies may be downloaded during installation. No PyPI publication is
 assumed. After installation, the bundled demos need no network or VASP.
 
-On macOS, the repository's `Fermi Softness Studio.command` launcher uses the
-`.venv` in that repository. Other installations should use `fermi-softness gui`
-or `python -m fermi_softness gui`. On Windows, calling
+On macOS, run `fermi-softness install-app --open` once to create the Pt₃Y icon in
+Applications. Open **Fermi Softness Studio** there or through Spotlight afterward.
+The source directory also provides **Install Fermi Softness Studio.command** for
+one-click setup. See [desktop setup](desktop-app.md) for locations and updates.
+Other installations can use `fermi-softness gui` or `python -m fermi_softness gui`.
+On Windows, calling
 `.venv\Scripts\python.exe -m fermi_softness gui` also avoids shell activation.
 
 The GUI and image renderer need a working graphics context. On Linux, use a

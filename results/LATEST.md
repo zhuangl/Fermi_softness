@@ -1,4 +1,11 @@
-# Fermi Softness 0.2.1 — documentation update 2026-10-09
+# Fermi Softness 0.2.2 — desktop application 2026-10-09
+
+The macOS installer creates Fermi Softness Studio.app with the transparent Pt3Y
+icon, registers it with LaunchServices and uses the existing Python environment.
+The installed application was opened through macOS and its 0.2.2 window and Pt3Y
+example were observed. There are 54 passing local tests, including environment
+path preservation, safe app updates and refusal to overwrite unrelated apps.
+See docs/desktop-app.md for installation and everyday launch instructions.
 
 Implemented: four style presets, five colorbar layouts, display units/fonts,
 offline Pt(111)/Pt3Y/Bader/tutorial demos, genuine Henkelman near-grid Bader
@@ -28,7 +35,7 @@ Important artifacts:
 - src/fermi_softness/data/: portable offline examples and refined basin labels
 - docs/images/pt3y-reconstruction.png: VASP reconstruction with the original color scale
 - results/local/gui-v02/: actual GUI/export acceptance evidence
-- dist/v0.2.1/: updated install/source archives
+- dist/v0.2.2/: desktop installer release archives
 
 All validation calculations are complete. Operational details and raw outputs
 are maintained outside the public source archive. Git/GitHub archiving of this

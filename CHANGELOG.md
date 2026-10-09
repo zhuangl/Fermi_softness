@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.2 — 2026-10-09
+
+- Add a macOS application installer and one-click setup script. Studio opens
+  from Applications or Spotlight and starts with the Pt₃Y demo.
+- Add a transparent Pt₃Y application icon for Finder, the Dock and GUI windows.
+- Preserve virtual-environment interpreter paths, protect unrelated app bundles
+  during installation, and record startup errors in the user's Library/Logs.
+
 ## 0.2.1 — 2026-10-09
 
 - Simplify the Pt₃Y descriptions across the landing pages, guides, desktop demo

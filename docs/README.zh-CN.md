@@ -35,9 +35,9 @@ Huang、Xiao、Lu 和 Zhuang 于 [2016 年](https://doi.org/10.1002/anie.2016018
 
 ## 软件功能
 
-**v0.2.1 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
+**v0.2.2 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
 Fortran 部分提供独立验证的累加核心，特定 VASP 版本的源码接入见开发文档。
-完整范围见[版本说明](release-0.2.1.md)。
+完整范围见[版本说明](release-0.2.2.md)。
 
 ## 安装与启动
 
@@ -57,8 +57,15 @@ python -m pip install ".[gui]"
 fermi-softness gui --demo
 ```
 
-Windows 激活环境使用 `.venv\Scripts\Activate.ps1`。本机已安装好项目环境时，
-macOS 用户也可以双击项目中的 `Fermi Softness Studio.command`。
+Windows 激活环境使用 `.venv\Scripts\Activate.ps1`。macOS 安装 GUI 后再运行一次：
+
+```sh
+fermi-softness install-app --open
+```
+
+以后从“应用程序”或 Spotlight 搜索 **Fermi Softness Studio** 即可启动。
+源码用户也可以双击 **Install Fermi Softness Studio.command** 完成安装和应用入口创建。
+详见[桌面安装说明](desktop-app.md)。
 Data 页的示例列表现在包含真实 Pt(111)、Pt₃Y(111) 重建、Pt 的单原子 Bader
 贡献和合成教学示例。数据已随程序附带，查看时不需要 VASP 或联网。
 

@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.1 — Complete CLI reference
+# Fermi Softness 0.2.2 — Complete CLI reference
 
 [中文](cli-reference.zh-CN.md) · [User guide](user-guide.en.md)
 
@@ -109,6 +109,16 @@ List the offline demo catalog.
 | Argument | Required | Default / choices | Meaning |
 |---|---|---|---|
 | `-h`, `--help` | no | — | Show command help and exit. |
+
+## `install-app`
+
+Install the macOS application icon and launcher.
+
+| Argument | Required | Default / choices | Meaning |
+|---|---|---|---|
+| `-h`, `--help` | no | — | Show command help and exit. |
+| `--directory` | no | — | Applications folder; defaults to /Applications if writable, otherwise ~/Applications. |
+| `--open` | no | `False` | Open Studio after installing its macOS application entry. |
 
 ## `install-bader`
 

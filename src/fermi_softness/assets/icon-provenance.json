@@ -1,0 +1,9 @@
+{
+  "purpose": "Application branding; not a numerical scientific figure",
+  "input": "docs/images/studio-overview.png",
+  "input_sha256": "da92a483ffce90dfa0661d60a9ec2627b02405d377b7b2d381f6696f8471eb37",
+  "tool": "Built-in image_gen",
+  "prompt": "Use case: background-extraction. Asset type: macOS application icon for Fermi Softness Studio. Input image: edit target, a screenshot of the existing scientific visualization. Extract ONLY the central three-dimensional Pt3Y slab from the black plotting viewport: preserve the recognizable wavy red/yellow/green/cyan/blue upper surface, the blue lower structure and small pale/cyan atom markers, with the same oblique viewing direction. Remove all black background including the holes between structures; remove all application chrome, sidebar, window frame, titles, axis triad, colorbar, numbers and text. Keep the existing shape and color arrangement as faithfully as possible; do not invent a new molecule, labels or scientific data. Output a single clean isolated cutout centered on a square canvas with genuine transparent alpha, approximately 8 percent clear padding so no part is clipped. Preserve the full slab silhouette with crisp antialiased edges, suitable as a recognizable colorful desktop app icon. No surrounding square tile, no new background, no text, no watermark. This is branding artwork derived from the screenshot, not a quantitative scientific figure.",
+  "png_sha256": "458aa146aafb7714a917e0d1db68f6e305aa82adbb5c08a0a046b85d0670edff",
+  "icns_conversion": "macOS sips resolution variants and iconutil; alpha preserved"
+}
