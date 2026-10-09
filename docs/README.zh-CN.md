@@ -35,9 +35,9 @@ Huang、Xiao、Lu 和 Zhuang 于 [2016 年](https://doi.org/10.1002/anie.2016018
 
 ## 软件功能
 
-**v0.2.2 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
+**v0.3.0 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
 Fortran 部分提供独立验证的累加核心，特定 VASP 版本的源码接入见开发文档。
-完整范围见[版本说明](release-0.2.2.md)。
+完整范围见[版本说明](release-0.3.0.md)。
 
 ## 安装与启动
 
@@ -128,6 +128,10 @@ eV/keV 单位都可调整。单位切换仅改变显示；数据仍以 eV⁻¹ �
 **Export** 页可导出 PNG/TIFF，设置实际像素尺寸、DPI 和透明背景。
 同时提供 Cube 输出，可继续在 VMD 或 VESTA 中处理。
 这里图像分辨率和计算网格精度是两个独立设置。
+
+Top / Side / Oblique 旁的 **Auto rotate** 可自动旋转，支持选择旋转轴、速度并随时
+暂停。**Export → Rotation animation** 可导出 MP4 或循环 GIF，设置时长、帧率和
+像素尺寸。详见[动画导出说明](animation.md)。
 
 ## 数值结果的含义
 

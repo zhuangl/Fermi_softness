@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fermi-softness"
-version = "0.2.2"
+version = "0.3.0"
 description = "Spatially resolved Fermi softness from VASP wavefunctions, with an interactive scientific viewer"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -20,8 +20,8 @@ Repository = "https://github.com/zhuangl/Fermi_softness"
 Issues = "https://github.com/zhuangl/Fermi_softness/issues"
 
 [project.optional-dependencies]
-gui = ["pyvista>=0.44,<0.50", "pyvistaqt>=0.11,<0.14", "PySide6>=6.7,<7", "pillow>=10"]
-dev = ["pytest>=8", "ruff>=0.9", "build>=1"]
+gui = ["pyvista>=0.44,<0.50", "pyvistaqt>=0.11,<0.14", "PySide6>=6.7,<7", "pillow>=10", "imageio-ffmpeg>=0.5"]
+dev = ["pytest>=8", "ruff>=0.9", "build>=1", "imageio-ffmpeg>=0.5", "pillow>=10"]
 
 [project.scripts]
 fermi-softness = "fermi_softness.cli:main"

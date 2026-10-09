@@ -11,8 +11,15 @@ from PySide6 import QtWidgets as W
 from pyvistaqt import QtInteractor
 
 from . import __version__
+from .animation import (
+    ExportCancelled,
+    export_animation,
+    fit_rotation_camera,
+    orbit_camera,
+    rotation_axis,
+)
 from .io import read_field, write_field_cube
-from .render import Scene, capture_camera, draw_scene, export_image
+from .render import Scene, capture_camera, draw_scene, export_image, restore_camera
 
 
 class CalculationWorker(QtCore.QThread):
@@ -89,6 +96,12 @@ class MainWindow(W.QMainWindow):
         self._drawn = False
         self._bader_source = None
         self._bader_directory = None
+        self._exporting_animation = False
+        self._animation_cancel_requested = False
+        self.rotation_timer = QtCore.QTimer(self)
+        self.rotation_timer.setInterval(33)
+        self.rotation_timer.timeout.connect(self.rotate_step)
+        self.rotation_clock = QtCore.QElapsedTimer()
         root = W.QSplitter()
         self.setCentralWidget(root)
         panel = W.QWidget()
@@ -98,10 +111,11 @@ class MainWindow(W.QMainWindow):
         title = W.QLabel("Fermi Softness")
         title.setObjectName("title")
         layout.addWidget(title)
-        subtitle = W.QLabel("SURFACE REACTIVITY STUDIO  ·  0.2")
+        subtitle = W.QLabel(f"SURFACE REACTIVITY STUDIO  ·  {__version__}")
         subtitle.setObjectName("subtitle")
         layout.addWidget(subtitle)
         self.tabs = W.QTabWidget()
+        self.tabs.setElideMode(QtCore.Qt.ElideNone)
         layout.addWidget(self.tabs)
         self._data_tab()
         self._scene_tab()
@@ -127,11 +141,28 @@ class MainWindow(W.QMainWindow):
             button = W.QPushButton(text)
             button.clicked.connect(lambda checked=False, m=method: self.orient(m))
             toolbar.addWidget(button)
+        self.rotate_button = W.QPushButton("Auto rotate")
+        self.rotate_button.setCheckable(True)
+        self.rotate_button.setEnabled(False)
+        self.rotate_button.toggled.connect(self.toggle_rotation)
+        toolbar.addWidget(self.rotate_button)
+        self.rotation_axis_choice = W.QComboBox()
+        for label, axis in (("Surface normal", "normal"), ("View up", "view"),
+                            ("X", "x"), ("Y", "y"), ("Z", "z")):
+            self.rotation_axis_choice.addItem(label, axis)
+        self.rotation_axis_choice.setToolTip("Rotation axis; Surface normal is normal to the a–b plane.")
+        toolbar.addWidget(self.rotation_axis_choice)
+        self.rotation_speed = _number(30, 1, 180, 1, 5)
+        self.rotation_speed.setSuffix(" °/s")
+        self.rotation_speed.setMaximumWidth(105)
+        self.rotation_speed.setToolTip("Preview rotation speed")
+        toolbar.addWidget(self.rotation_speed)
         toolbar.addStretch()
         self.view_label = W.QLabel("Interactive 3D")
         toolbar.addWidget(self.view_label)
         vl.addLayout(toolbar)
         self.plotter = QtInteractor(viewer)
+        self.plotter.iren.add_observer("StartInteractionEvent", lambda *_: self.stop_rotation())
         self.plotter.set_background("#f3f6fa")
         self.plotter.add_text(
             "Fermi Softness Studio\n\nOpen a result or load the demo",
@@ -456,6 +487,7 @@ class MainWindow(W.QMainWindow):
         self.transparent = W.QCheckBox("Transparent background")
         layout.addWidget(self.transparent)
         self._button(layout, "Export PNG or TIFF…", self.export_picture, True)
+        self._button(layout, "Export animation (MP4 / GIF)…", self.export_movie, True)
         self._button(layout, "Save field (.npz)…", self.save_field)
         self._button(layout, "Export Cube for VMD / VESTA…", self.export_cube)
         self._button(layout, "Show numerical metadata", self.show_metadata)
@@ -466,6 +498,41 @@ class MainWindow(W.QMainWindow):
         )
         label.setWordWrap(True)
         layout.addWidget(label)
+        animation_group = W.QGroupBox("Rotation animation")
+        animation_form = W.QFormLayout(animation_group)
+        self.animation_width = W.QSpinBox()
+        self.animation_height = W.QSpinBox()
+        for box, value in ((self.animation_width, 1920), (self.animation_height, 1080)):
+            box.setRange(128, 4096)
+            box.setSingleStep(2)
+            box.setValue(value)
+        self.animation_seconds = _number(12, 0.25, 120, 2, 1)
+        self.animation_fps = W.QSpinBox()
+        self.animation_fps.setRange(1, 60)
+        self.animation_fps.setValue(30)
+        self.animation_turns = W.QSpinBox()
+        self.animation_turns.setRange(1, 10)
+        self.animation_turns.setValue(1)
+        self.animation_reverse = W.QCheckBox("Reverse direction")
+        self.animation_reverse.setToolTip("Applies to the preview and exported animation")
+        self.animation_fit = W.QCheckBox("Fit full rotation (avoid clipping)")
+        self.animation_fit.setChecked(True)
+        for name, widget in (("Width / pixels", self.animation_width),
+                             ("Height / pixels", self.animation_height),
+                             ("Duration / seconds", self.animation_seconds),
+                             ("Frames / second", self.animation_fps),
+                             ("Full rotations", self.animation_turns)):
+            animation_form.addRow(name, widget)
+        animation_form.addRow(self.animation_reverse)
+        animation_form.addRow(self.animation_fit)
+        layout.addWidget(animation_group)
+        animation_note = W.QLabel(
+            "Export starts from the current view and uses the rotation axis above. "
+            "Duration and full rotations set the movie's speed. MP4 preserves smooth colors; "
+            "GIF loops continuously. Animation uses the scene background."
+        )
+        animation_note.setWordWrap(True)
+        layout.addWidget(animation_note)
         layout.addStretch()
 
     def _bader_tab(self):
@@ -616,6 +683,8 @@ class MainWindow(W.QMainWindow):
             raise ValueError("Open or calculate a softness field first.")
 
     def set_field(self, field, charge=None, reset_bader=True, draw=True):
+        self.stop_rotation()
+        self.rotate_button.setEnabled(True)
         keep_range = self.field is not None and not self.auto_color.isChecked()
         self.field, self.charge = field, charge
         if reset_bader:
@@ -743,10 +812,58 @@ class MainWindow(W.QMainWindow):
             self.error(str(exc))
 
     def orient(self, method):
+        self.stop_rotation()
         getattr(self.plotter, method)()
         self.plotter.render()
 
+    def stop_rotation(self):
+        self.rotation_timer.stop()
+        self.rotate_button.setChecked(False)
+        self.rotate_button.setText("Auto rotate")
+
+    def toggle_rotation(self, enabled):
+        if not enabled:
+            self.rotation_timer.stop()
+            self.rotate_button.setText("Auto rotate")
+            return
+        if self.field is None or self._exporting_animation:
+            self.stop_rotation()
+            return
+        if self.animation_fit.isChecked():
+            try:
+                camera = fit_rotation_camera(
+                    capture_camera(self.plotter), self.plotter.bounds, *self.plotter.window_size,
+                    self.scene.orthographic,
+                )
+                restore_camera(self.plotter, camera)
+            except Exception as exc:
+                self.stop_rotation()
+                self.error(str(exc))
+                return
+        self.rotation_clock.start()
+        self.rotation_timer.start()
+        self.rotate_button.setText("Pause rotation")
+
+    def rotate_step(self):
+        if self.field is None or self._exporting_animation:
+            self.stop_rotation()
+            return
+        try:
+            seconds = min(self.rotation_clock.restart() / 1000, 0.25)
+            camera = capture_camera(self.plotter)
+            axis = rotation_axis(self.rotation_axis_choice.currentData(), self.field.cell, camera)
+            direction = -1 if self.animation_reverse.isChecked() else 1
+            restore_camera(self.plotter, orbit_camera(
+                camera, axis, direction * self.rotation_speed.value() * seconds
+            ))
+            self.plotter.reset_camera_clipping_range()
+            self.plotter.render()
+        except Exception as exc:
+            self.stop_rotation()
+            self.error(str(exc))
+
     def save_scene(self):
+        self.stop_rotation()
         if self.field is None:
             return self.error("Load a field first.")
         path, _ = W.QFileDialog.getSaveFileName(self, "Save view", "view.json", "JSON (*.json)")
@@ -767,6 +884,7 @@ class MainWindow(W.QMainWindow):
             self.error(str(exc))
 
     def apply_scene(self, scene):
+        self.stop_rotation()
         try:
             self.require_field()
             draw_scene(self.plotter, self.field, scene, self.charge)
@@ -805,6 +923,7 @@ class MainWindow(W.QMainWindow):
             self.error(str(exc))
 
     def export_picture(self):
+        self.stop_rotation()
         if self.field is None:
             return self.error("Load a field first.")
         path, _ = W.QFileDialog.getSaveFileName(
@@ -827,6 +946,65 @@ class MainWindow(W.QMainWindow):
                 )
             except Exception as exc:
                 self.error(str(exc))
+
+    def export_movie(self):
+        if self.field is None:
+            return self.error("Load a field first.")
+        if self.worker is not None and self.worker.isRunning():
+            return self.error("Wait for the current calculation to finish before exporting animation.")
+        was_rotating = self.rotation_timer.isActive()
+        self.stop_rotation()
+        path, selected_filter = W.QFileDialog.getSaveFileName(
+            self, "Export rotation animation", "softness.mp4", "MP4 video (*.mp4);;GIF animation (*.gif)"
+        )
+        if not path:
+            if was_rotating:
+                self.rotate_button.setChecked(True)
+            return
+        if not Path(path).suffix:
+            path += ".gif" if selected_filter.startswith("GIF") else ".mp4"
+        self.export_movie_to(path, resume_rotation=was_rotating)
+
+    def export_movie_to(self, path, *, resume_rotation=False):
+        """Keep VTK rendering on the GUI thread while allowing modal cancellation."""
+        self.stop_rotation()
+        self._exporting_animation = True
+        self._animation_cancel_requested = False
+        dialog = W.QProgressDialog("Preparing animation…", "Cancel", 0, 1000, self)
+        dialog.setWindowTitle("Export animation")
+        dialog.setWindowModality(QtCore.Qt.ApplicationModal)
+        dialog.setMinimumDuration(0)
+        dialog.setAutoClose(False)
+        dialog.setAutoReset(False)
+        dialog.show()
+
+        def progress(done, total, label):
+            dialog.setLabelText(f"{label} · {done}/{total} frames")
+            dialog.setValue(round(950 * done / total))
+
+        try:
+            metadata = export_animation(
+                self.plotter, path, self.scene, self.field.cell,
+                width=self.animation_width.value(), height=self.animation_height.value(),
+                fps=self.animation_fps.value(), seconds=self.animation_seconds.value(),
+                turns=self.animation_turns.value(), axis=self.rotation_axis_choice.currentData(),
+                reverse=self.animation_reverse.isChecked(), progress=progress,
+                fit=self.animation_fit.isChecked(),
+                cancelled=lambda: dialog.wasCanceled() or self._animation_cancel_requested,
+                pulse=W.QApplication.processEvents,
+            )
+            self.statusBar().showMessage(
+                f"Exported {metadata['frames']} frames at {metadata['fps']} fps: {path}"
+            )
+        except ExportCancelled:
+            self.statusBar().showMessage("Animation export cancelled; the original view is restored.")
+        except Exception as exc:
+            self.error(str(exc))
+        finally:
+            dialog.close()
+            self._exporting_animation = False
+            if resume_rotation:
+                self.rotate_button.setChecked(True)
 
     def save_field(self):
         if self.field is None:
@@ -989,6 +1167,11 @@ class MainWindow(W.QMainWindow):
             self.statusBar().showMessage("Cancelling after the current wavefunction…")
 
     def closeEvent(self, event):
+        if self._exporting_animation:
+            self._animation_cancel_requested = True
+            event.ignore()
+            return
+        self.stop_rotation()
         if self.worker is not None and self.worker.isRunning():
             self.cancel_calculation()
             event.ignore()

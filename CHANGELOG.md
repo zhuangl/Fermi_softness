@@ -1,6 +1,15 @@
 # Changelog
 
-## Unreleased
+## 0.3.0 — 2026-10-09
+
+- Add start/pause auto-rotation beside Top / Side / Oblique, with selectable
+  axis, preview speed and reverse direction.
+- Export MP4 and looping GIF turntables from the current view; provide duration,
+  frame rate, resolution, full rotations, progress and cancellation.
+- Keep color limits fixed throughout each movie, stream frames without retaining
+  the whole animation in memory, restore the live camera, and save scene/animation
+  sidecars. Include FFmpeg through the GUI dependency.
+- Preserve perspective field of view when saving and restoring camera settings.
 
 - Display figure units with superscripts and the Angstrom symbol (eV⁻¹ Å⁻³ or
   keV⁻¹ Å⁻³) in every colorbar layout and exported image.

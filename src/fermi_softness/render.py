@@ -127,7 +127,15 @@ def capture_camera(plotter):
     return {
         "position": [list(x) for x in plotter.camera_position],
         "parallel_scale": float(plotter.camera.parallel_scale),
+        "view_angle": float(plotter.camera.view_angle),
     }
+
+
+def restore_camera(plotter, camera):
+    plotter.camera_position = camera["position"]
+    plotter.camera.parallel_scale = camera["parallel_scale"]
+    if "view_angle" in camera:
+        plotter.camera.view_angle = camera["view_angle"]
 
 
 def softness_unit_label(display_units):
@@ -311,8 +319,7 @@ def draw_scene(plotter, field, scene, charge=None, *, preserve_camera=False):
     else:
         plotter.disable_parallel_projection()
     if camera:
-        plotter.camera_position = camera["position"]
-        plotter.camera.parallel_scale = camera["parallel_scale"]
+        restore_camera(plotter, camera)
     else:
         plotter.view_isometric()
         plotter.reset_camera(bounds=mesh.bounds)

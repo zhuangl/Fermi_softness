@@ -4,6 +4,11 @@ The package uses NumPy, SciPy, ASE and defusedxml, with optional PyVista/VTK,
 PyVistaQt, PySide6 and Pillow for the viewer. Their licenses remain applicable
 to their own distributions. No dependency's source is vendored here.
 
+Animation export uses [imageio-ffmpeg](https://github.com/imageio/imageio-ffmpeg)
+and its FFmpeg executable, installed as dependencies rather than vendored in this
+repository. FFmpeg and the codecs in the chosen distribution retain their own
+licenses; see the dependency's bundled notices and [FFmpeg licensing](https://ffmpeg.org/legal.html).
+
 Optional Bader analysis uses the Henkelman group's official executable,
 downloaded separately with pinned release checksums. It is not redistributed
 under this project's BSD license. Runtime and numerical integration checks
@@ -55,6 +60,9 @@ BSD-3-Clause software license. Its source record and SHA-256 checksum are in
 NumPy、SciPy、ASE、defusedxml 及可选的 PyVista/VTK、PyVistaQt、PySide6、Pillow
 分别遵循自身许可证，本仓库没有把这些依赖的源码合并分发。Henkelman Bader 程序由
 用户单独安装，不重新按本项目 BSD 许可证分发。
+
+动画导出使用单独安装的 imageio-ffmpeg 及其 FFmpeg 程序。FFmpeg 和相应编解码器
+保持各自许可证，相关声明随依赖分发，不改用本项目的 BSD 许可证。
 
 内置 Pt/Pt₃Y 数值场、Bader 标签和程序生成图像是本项目产生的演示数据，随项目按
 项目许可证提供，来源见相应报告。它们不包含私人源 Cube、出版商 PDF、

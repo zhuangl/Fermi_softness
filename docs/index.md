@@ -1,11 +1,12 @@
 # Documentation · 使用文档
 
-Fermi Softness **0.2.2** · [Project home](../README.md) · [中文首页](README.zh-CN.md)
+Fermi Softness **0.3.0** · [Project home](../README.md) · [中文首页](README.zh-CN.md)
 
 | Topic / 内容 | English | 中文 |
 |---|---|---|
 | Origins of Fermi softness and 2016 media coverage | [Background](../README.md#origins-of-fermi-softness) | [方法来历与历史报道](README.zh-CN.md#费米软度的来历) |
 | macOS application icon and one-click launch | [Desktop setup](desktop-app.md) | [桌面安装与启动](desktop-app.md) |
+| Auto-rotation and MP4/GIF export | [Animation](animation.md) | [自动旋转与动画导出](animation.md) |
 | Installation, complete workflows, GUI, export, troubleshooting | [User guide](user-guide.en.md) | [完整使用手册](user-guide.zh-CN.md) |
 | Every command and option | [CLI reference](cli-reference.en.md) | [命令行参考](cli-reference.zh-CN.md) |
 | Equations, units, normalization, symmetry, grids | [Scientific conventions](science.md) | [科学方法与数值约定](science.zh-CN.md) |
@@ -17,7 +18,7 @@ Fermi Softness **0.2.2** · [Project home](../README.md) · [中文首页](READM
 | Independent Fortran kernel and VASP integration contract | [Fortran component](../vasp-plugin/README.md) | [Fortran 核心](../vasp-plugin/README.zh-CN.md) |
 | Regenerate the Pt(111) benchmark | [Pt input](../validation/pt111/README.md) | [Pt 输入](../validation/pt111/README.zh-CN.md) |
 | Regenerate the Pt₃Y(111) reconstruction | [Pt₃Y input](../validation/pt3y111/README.md) | [Pt₃Y 输入](../validation/pt3y111/README.zh-CN.md) |
-| Release contents and citation | [Release notes / 版本说明](release-0.2.2.md) | [Release notes / 版本说明](release-0.2.2.md) |
+| Release contents and citation | [Release notes / 版本说明](release-0.3.0.md) | [Release notes / 版本说明](release-0.3.0.md) |
 | Required original-method citation and BibTeX | [Citation / 引用要求](../CITING.md) | [Citation / 引用要求](../CITING.md) |
 
 The GUI currently uses English labels. The Chinese guide gives the exact labels

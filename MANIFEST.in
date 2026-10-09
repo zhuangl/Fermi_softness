@@ -10,7 +10,7 @@ include results/pt3y-validation.json
 include results/release-checks-v02.json
 include results/pt3y-bader-gridcheck.json results/pt3y-bader-refinement.json results/pt3y-bader-reference-check.json
 recursive-include docs *.md
-recursive-include docs/images *.png *.jpg *.json
+recursive-include docs/images *.png *.jpg *.gif *.json
 recursive-include vasp-plugin *.f90 CMakeLists.txt *.md
 recursive-include tests *.py
 recursive-include validation *.py

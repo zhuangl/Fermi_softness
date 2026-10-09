@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.2 — Complete CLI reference
+# Fermi Softness 0.3.0 — Complete CLI reference
 
 [中文](cli-reference.zh-CN.md) · [User guide](user-guide.en.md)
 
@@ -153,6 +153,26 @@ Render a field as PNG or TIFF.
 | `--width` | no | `3600` | Image width in pixels. |
 | `--height` | no | `2600` | Image height in pixels. |
 | `--dpi` | no | `300` | Image DPI metadata. |
+
+## `animate`
+
+Export a rotating view as MP4 or GIF.
+
+| Argument | Required | Default / choices | Meaning |
+|---|---|---|---|
+| `-h`, `--help` | no | — | Show command help and exit. |
+| `field` | yes | — | Softness volume, preferably native .npz. |
+| `-o`, `--output` | yes | — | Destination file or directory (see workflow below). |
+| `--charge` | no | — | Charge density; use original SCF density for envelopes/populations. |
+| `--scene` | no | — | Saved scene JSON, including camera and styling. |
+| `--width` | no | `1920` | Image width in pixels. |
+| `--height` | no | `1080` | Image height in pixels. |
+| `--fps` | no | `30` | Animation frames per second, 1–60. |
+| `--seconds` | no | `12` | Animation duration in seconds, 0.25–120. |
+| `--turns` | no | `1` | Number of full rotations, 1–10. |
+| `--axis` | no | `normal`; `normal`, `view`, `x`, `y`, `z` | Rotation axis: surface normal, initial view-up, or Cartesian x/y/z. |
+| `--reverse` | no | `False` | Reverse the rotation direction. |
+| `--no-fit` | no | `False` | Keep exact camera framing; default fits the full rotation. |
 
 ## `integrate`
 

@@ -1,0 +1,14 @@
+[
+  {
+    "file": "fermi_softness-0.3.0-py3-none-any.whl",
+    "bytes": 40826579,
+    "sha256": "9f98331d392c5d2e4dc4890768537cb4a6015a72750834d9411063ed514957bc",
+    "private_data_audit": "PASS"
+  },
+  {
+    "file": "fermi_softness-0.3.0.tar.gz",
+    "bytes": 49427443,
+    "sha256": "84defdd7af2d379a9222be4e22c4a1240bfba9cc0a61d25aa871355ce954ca67",
+    "private_data_audit": "PASS"
+  }
+]

@@ -43,7 +43,7 @@ KGaA, Weinheim. Click the image for the full-resolution screenshot.
 
 ## Software overview
 
-This is version **0.2.2**, a research release with colorbar styles, offline
+This is version **0.3.0**, a research release with colorbar styles, offline
 surface demos, and integrated Bader analysis. The independent VASP
 postprocessor is implemented; the optional Fortran component is an integration
 kernel, not a certified patch to a specific VASP version.
@@ -54,7 +54,7 @@ author's saved view and automatic color limits, showing the Pt-high/Y-low spatia
 
 This release includes the standalone engine, GUI, CLI/Python interfaces, offline
 demos, bilingual manuals and an independent Fortran kernel. Read the
-[release notes](docs/release-0.2.2.md), [scientific conventions](docs/science.md)
+[release notes](docs/release-0.3.0.md), [scientific conventions](docs/science.md)
 and [validation record](docs/validation.md) for its exact scope.
 
 ## Install
@@ -218,6 +218,11 @@ units. Numerical field values are unchanged by styling.
 
 Export PNG or TIFF with an explicit pixel size and DPI, including transparent
 backgrounds. Image resolution is independent of the numerical FFT grid.
+
+Click **Auto rotate** beside Top / Side / Oblique for a turntable preview. Choose
+the axis and speed, or pause and drag to adjust the view. **Export → Rotation
+animation** saves MP4 or looping GIF movies with duration, frame rate and pixel
+size controls. See [animation export](docs/animation.md).
 
 ```sh
 fermi-softness render my-softness/softness.npz \

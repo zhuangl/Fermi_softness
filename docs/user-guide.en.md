@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.2 — complete user guide
+# Fermi Softness 0.3.0 — complete user guide
 
 [中文](user-guide.zh-CN.md) · [Documentation index](index.md) · [CLI reference](cli-reference.en.md)
 
@@ -52,7 +52,7 @@ fermi-softness gui --example pt3y111
 ```
 
 For a server without graphics, install with `python -m pip install .`. To install
-a downloaded wheel, use `python -m pip install "./fermi_softness-0.2.2-py3-none-any.whl[gui]"`.
+a downloaded wheel, use `python -m pip install "./fermi_softness-0.3.0-py3-none-any.whl[gui]"`.
 Dependencies may be downloaded during installation. No PyPI publication is
 assumed. After installation, the bundled demos need no network or VASP.
 
@@ -310,6 +310,10 @@ For comparable figures, hold the field representation, kT, envelope definition,
 color scale and units fixed. State those choices in the figure caption.
 
 ## 10. Export figures and numerical data
+
+For rotation movies, use **Auto rotate** in the top toolbar and **Export → Rotation
+animation**. MP4/GIF settings and command-line examples are in the
+[animation guide](animation.md).
 
 In **Export**, set pixel width/height, DPI and optional transparency, then use
 **Export PNG or TIFF…**. For example, 4800×3600 pixels at 600 DPI corresponds to

@@ -103,6 +103,19 @@ def parser():
     render.add_argument("--width", type=int, default=3600)
     render.add_argument("--height", type=int, default=2600)
     render.add_argument("--dpi", type=int, default=300)
+    animate = sub.add_parser("animate", help="Export a rotating field as MP4 or GIF")
+    animate.add_argument("field")
+    animate.add_argument("-o", "--output", required=True)
+    animate.add_argument("--charge")
+    animate.add_argument("--scene")
+    animate.add_argument("--width", type=int, default=1920)
+    animate.add_argument("--height", type=int, default=1080)
+    animate.add_argument("--fps", type=int, default=30)
+    animate.add_argument("--seconds", type=float, default=12)
+    animate.add_argument("--turns", type=int, default=1)
+    animate.add_argument("--axis", choices=("normal", "view", "x", "y", "z"), default="normal")
+    animate.add_argument("--reverse", action="store_true")
+    animate.add_argument("--no-fit", action="store_true", help="Keep exact framing instead of fitting the full rotation")
     integrate = sub.add_parser(
         "integrate", help="Integrate a grid-aligned external basin partition"
     )
@@ -305,6 +318,29 @@ def main(argv=None):
             from .gui import launch
 
             return launch(args.field, args.charge, args.demo, args.scene, args.example)
+        elif args.command == "animate":
+            import numpy as np
+
+            from .animation import render_animation
+            from .io import read_field
+            from .render import Scene
+
+            field = read_field(args.field)
+            charge = read_field(args.charge, density=True) if args.charge else None
+            scene = Scene.load(args.scene) if args.scene else Scene(
+                isovalue=float(np.max(field.values) * 0.4), color_max=float(np.max(field.values))
+            )
+
+            def progress(done, total, label):
+                if done == total or done == 1 or done % max(1, total // 20) == 0:
+                    print(f"{label}: {done}/{total}", file=sys.stderr, flush=True)
+
+            result = render_animation(
+                field, args.output, scene, charge, width=args.width, height=args.height,
+                fps=args.fps, seconds=args.seconds, turns=args.turns, axis=args.axis,
+                reverse=args.reverse, fit=not args.no_fit, progress=progress,
+            )
+            print(json.dumps(dict(output=str(Path(args.output).resolve()), **result), indent=2))
         elif args.command == "render":
             import numpy as np
 

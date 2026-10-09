@@ -1,4 +1,4 @@
-# Fermi Softness 0.2.2 — 完整使用手册
+# Fermi Softness 0.3.0 — 完整使用手册
 
 [English](user-guide.en.md) · [文档目录](index.md) · [命令行参考](cli-reference.zh-CN.md)
 
@@ -51,7 +51,7 @@ fermi-softness gui --example pt3y111
 ```
 
 服务器只计算、不绘图时，使用 `python -m pip install .`。下载 wheel 后可使用
-`python -m pip install "./fermi_softness-0.2.2-py3-none-any.whl[gui]"` 安装。
+`python -m pip install "./fermi_softness-0.3.0-py3-none-any.whl[gui]"` 安装。
 安装依赖可能需要联网；本项目没有假定软件已发布到 PyPI。安装完成后，内置示例
 可以离线观看，也不需要安装 VASP。
 
@@ -283,6 +283,9 @@ dark（演示深色）和 Grayscale print（灰度打印）四套预设。颜色
 比较图应保持密度表示、kT、包络面定义、颜色范围及单位一致，并在图注中说明。
 
 ## 10. 导出图像与数值数据
+
+旋转预览使用顶部 **Auto rotate**，动画导出使用 **Export → Rotation animation**。
+MP4/GIF 的设置及命令行示例见[动画说明](animation.md)。
 
 在 **Export** 设置像素宽高、DPI 和可选透明背景，再点击 **Export PNG or TIFF…**。
 例如 4800×3600 像素、600 DPI 对应 8×6 英寸。仅增加 DPI 不会产生更多图像细节；

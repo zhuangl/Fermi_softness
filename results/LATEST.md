@@ -1,4 +1,11 @@
-# Fermi Softness 0.2.2 — desktop application 2026-10-09
+# Fermi Softness 0.3.0 — rotation and animation 2026-10-09
+
+Implemented automatic camera rotation and MP4/GIF export with axis/speed controls,
+complete-turn framing, fixed color limits, cancellation and camera restoration.
+The GUI timer and export/cancel flows were exercised on the real Pt3Y field.
+60 local tests pass. An 8-second 1280x720 MP4 (192 frames) and a 6-second
+640x480 looping GIF (72 frames) were encoded and decoded for verification.
+See docs/animation.md and docs/images/pt3y-turntable.gif for the working example.
 
 The macOS installer creates Fermi Softness Studio.app with the transparent Pt3Y
 icon, registers it with LaunchServices and uses the existing Python environment.

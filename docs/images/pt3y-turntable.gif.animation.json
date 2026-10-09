@@ -1,0 +1,30 @@
+{
+  "schema": "fermi-softness-animation-1",
+  "software": "fermi-softness",
+  "version": "0.3.0",
+  "frames": 72,
+  "fps": 12,
+  "width": 640,
+  "height": 480,
+  "duration_seconds": 6.0,
+  "requested_duration_seconds": 6.0,
+  "turns": 1,
+  "axis": "normal",
+  "axis_vector": [
+    0.0,
+    -0.0,
+    1.0
+  ],
+  "reverse": false,
+  "fit_rotation": true,
+  "duplicate_endpoint": false,
+  "color_range_fixed": true,
+  "color_range_eV_inverse_Angstrom_inverse3": [
+    0.005389464729373711,
+    0.04859356730504154
+  ],
+  "scene_file": "pt3y-turntable.gif.scene.json",
+  "format": "gif",
+  "source_demo": "pt3y111",
+  "source_field_sha256": "81c6285533a6c23176005ae563429776a44fd0f6281da8054eb5f33cbc665cf3"
+}
