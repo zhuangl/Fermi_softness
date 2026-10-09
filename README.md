@@ -17,6 +17,10 @@ and **Fermi Softness Studio**, a local desktop viewer.
 [中文首页与使用文档](docs/README.zh-CN.md) · [Complete user guide](docs/user-guide.en.md) ·
 [All documentation](docs/index.md) · [CLI reference](docs/cli-reference.en.md)
 
+[![Fermi Softness Studio displaying the Pt3Y(111) softness map](docs/images/studio-overview.png)](docs/images/studio-overview.png)
+
+*Fermi Softness Studio: the Pt₃Y(111) softness map and interactive scene controls.*
+
 ## Origins of Fermi softness
 
 Huang, Xiao, Lu and Zhuang introduced Fermi softness in
@@ -52,16 +56,6 @@ This release includes the standalone engine, GUI, CLI/Python interfaces, offline
 demos, bilingual manuals and an independent Fortran kernel. Read the
 [release notes](docs/release-0.2.1.md), [scientific conventions](docs/science.md)
 and [validation record](docs/validation.md) for its exact scope.
-
-![Pt(111) native VASP density map](docs/images/pt111-native.png)
-
-Actual VASP 6.4.2 Pt(111) integration fixture, shown as a 4x4 periodic display.
-This software check is separate from reproduction of the original paper.
-
-![Pt3Y(111) reconstruction on the original color scale](docs/images/pt3y-reconstruction.png)
-
-Pt₃Y reconstruction: the original 1–28 keV⁻¹ Å⁻³ display range saturates some
-current Pt values. This figure is generated from the new VASP calculation.
 
 ## Install
 

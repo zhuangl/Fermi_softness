@@ -12,6 +12,10 @@
 > [DOI: 10.1002/anie.201601824](https://doi.org/10.1002/anie.201601824)。**
 > [完整书目信息和 BibTeX](../CITING.md)。仅引用软件仓库不能代替原始论文。
 
+[![Fermi Softness Studio 中的 Pt₃Y(111) 费米软度图](images/studio-overview.png)](images/studio-overview.png)
+
+*Fermi Softness Studio 中的 Pt₃Y(111) 费米软度图与交互式显示设置。*
+
 ## 费米软度的来历
 
 Huang、Xiao、Lu 和 Zhuang 于 [2016 年](https://doi.org/10.1002/anie.201601824)
@@ -34,10 +38,6 @@ Huang、Xiao、Lu 和 Zhuang 于 [2016 年](https://doi.org/10.1002/anie.2016018
 **v0.2.1 研究版本**提供独立计算引擎、CLI/Python 接口、GUI、离线示例和 Bader 分析。
 Fortran 部分提供独立验证的累加核心，特定 VASP 版本的源码接入见开发文档。
 完整范围见[版本说明](release-0.2.1.md)。
-
-![Pt₃Y 重建结果](images/pt3y-reconstruction.png)
-
-由新 VASP 数据生成，采用原图色标；当前部分 Pt 数值超过色标上限，因此颜色饱和。
 
 ## 安装与启动
 
