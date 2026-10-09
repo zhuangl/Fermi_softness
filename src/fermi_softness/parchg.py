@@ -149,13 +149,15 @@ def prepare_parchg(
 
 def _read_charge(path):
     if path.suffix == ".gz":
-        with tempfile.NamedTemporaryFile(suffix=".vasp") as tmp:
-            with gzip.open(path, "rb") as source:
+        with tempfile.TemporaryDirectory(prefix="fermi-parchg-") as directory:
+            unpacked = Path(directory) / "PARCHG"
+            with gzip.open(path, "rb") as source, unpacked.open("wb") as target:
                 import shutil
 
-                shutil.copyfileobj(source, tmp)
-            tmp.flush()
-            return VaspChargeDensity(tmp.name)
+                shutil.copyfileobj(source, target)
+            # Close the writer before ASE opens the path: Windows locks an
+            # open NamedTemporaryFile against a second file handle.
+            return VaspChargeDensity(str(unpacked))
     return VaspChargeDensity(str(path))
 
 

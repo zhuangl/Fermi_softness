@@ -10,7 +10,7 @@ from .render import Scene
 
 def catalog():
     root = files("fermi_softness").joinpath("data")
-    return json.loads(root.joinpath("catalog.json").read_text())
+    return json.loads(root.joinpath("catalog.json").read_text(encoding="utf-8"))
 
 
 def load_demo(demo_id):

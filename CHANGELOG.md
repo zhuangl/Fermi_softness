@@ -6,6 +6,8 @@
   references, troubleshooting, software scope and release notes.
 - Generate both CLI references from the actual parser and check local links in CI.
 - Prepare the initial Git/GitHub archive and reproducible release packages.
+- Fix Windows reopening of decompressed PARCHG temporary files; read the demo
+  catalog as UTF-8 independently of the operating-system locale.
 
 - Add a dedicated Style tab with scientific, paper-style, presentation and
   grayscale presets; horizontal, vertical, compact, endpoint and hidden bars;
